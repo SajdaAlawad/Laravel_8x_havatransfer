@@ -1,25 +1,14 @@
 
 @extends('layouts.home')
 
-@section('title', 'Sub Page Title')
-
-@section('sidebar')
-    <div class="col-sm-4 col-lg-2" style="background-color:#2563eb">
-       <ul>
-           <li>Bilgisayar</li>
-           <li>Elektronik</li>
-           <li>Ev Esyalari</li>
-       </ul>
-    </div>
-@endsection
-
+@section('title', 'About Us')
 @section('content')
-  <div class="col-sm-8 col-lg-10">
-   <h1>Slider</h1>
-    zzzzzzzzzz <br>
-    <h1> Iceriklerimiz</h1>
-    dddddddddddddd <br>
-    fffffffffffffff <br>
-
-  </div>
-@endsection
+    <div class="col-sm-12">
+        <h1> About Us</h1>
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa <br>
+        bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb<br>
+        cccccccccccccccccccccccccccc<br>
+        <br>
+        <br>
+    </div>
+    @endsection

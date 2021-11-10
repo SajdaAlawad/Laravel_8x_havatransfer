@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/home2', function () {
     return view('welcome');
 });
+
+//Route::redirect('/anasayfa', '/home');
+
+Route::get('/', function () {
+    return view('home.index', ['name' => 'Sajda Alavad']); //parametre gondermesi
+});
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/aboutus', [HomeController::class, 'index'])->name('aboutus');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
