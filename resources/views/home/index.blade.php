@@ -6,7 +6,11 @@
     turkiye en guvenilir bulunduran havatransfer sitesi...
 @endsection
 @section('keywords')
-    @include('home._slider')
+@section('slider')
+
+
+@include('home._slider')
+@endsection
 
 @section('content')
 
