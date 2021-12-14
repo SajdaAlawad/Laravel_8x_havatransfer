@@ -9,12 +9,12 @@
            <div class="container-fluid">
                <div class="row mb-2">
                <div class="col-sm-6">
-                   <h3>UÇUŞLAR</h3>
+                   <h3>Categories</h3>
                </div>
                <div class="col-sm-6">
                    <ol class="breadcrumb float-sm-right">
                        <li class="breadcrumb-item"><a href="#">home</a>  </li>
-                       <li class="breadcrumb-item"><a href="#">UÇUŞ</a>  </li>
+                       <li class="breadcrumb-item"><a href="#">Category</a>  </li>
                    </ol>
                </div>
            </div>
@@ -24,7 +24,8 @@
        <section class="content">
            <div class="card">
                <div class="card-header">
-                   <h3 class="card-header">Flights List</h3>
+                  <!-- <a href="{{route('admin_category_add')}}" type="button" class="btn btn-block btn-info" style="width: 200px">Add Category</a> -->
+                   <a href="{{route('admin_category_add')}}" type="button" class="btn btn-inverse-info btn-fw" style="width:200px">Add Category</a>
                </div>
 
 
@@ -52,7 +53,7 @@
                                        <td> {{ $rs->title }}</td>
                                        <td> {{ $rs->status }}</td>
                                        <td> Edit</td>
-                                       <td> Delete</td>
+                                       <td> <a href="{{route('admin_category_delete',['id' =>$rs->id])}}" onclick="return confirm('Delete! are you sure?')">Delete</a></td>
                                    </tr>
                                    @endforeach
                                    </tbody>
