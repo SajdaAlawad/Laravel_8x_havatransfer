@@ -21,7 +21,7 @@ Route::redirect('/anasayfa', '/home')->name('anasayfa');
 
 Route::get('/', function () {
     return view('home.index'); //parametre gondermesi
-});
+})->name('m');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/aboutus', [HomeController::class, 'index'])->name('aboutus');
@@ -38,7 +38,21 @@ Route::post('category/create',[App\Http\Controllers\Admin\CategoryController::cl
 Route::get('category/edit/{id}',[App\Http\Controllers\Admin\CategoryController::class, 'edit'])->name('admin_category_edit');
 Route::post('category/update/{id}',[App\Http\Controllers\Admin\CategoryController::class, 'update'])->name('admin_category_update');
 Route::get('category/delete/{id}',[App\Http\Controllers\Admin\CategoryController::class, 'destroy'])->name('admin_category_delete');
-Route::get('category/show',[App\Http\Controllers\Admin\CategoryController::class, 'show'])->name('admin_category_showphp');
+Route::get('category/show',[App\Http\Controllers\Admin\CategoryController::class, 'show'])->name('admin_category_show');
+
+
+Route::prefix('product')->group(function ()
+{
+
+    Route::get('/',[\App\Http\Controllers\Admin\ProductController::class, 'index'])->name('admin_products');
+    Route::get('create',[\App\Http\Controllers\Admin\ProductController::class, 'create'])->name('admin_product_add');
+    Route::post('store',[\App\Http\Controllers\Admin\ProductController::class, 'store'])->name('admin_product_store');
+    Route::get('edit/{id}',[\App\Http\Controllers\Admin\ProductController::class, 'edit'])->name('admin_product_edit');
+    Route::post('update/{id}',[\App\Http\Controllers\Admin\ProductControllerr::class, 'update'])->name('admin_product_update');
+    Route::get('delete/{id}',[\App\Http\Controllers\Admin\ProductController::class, 'destroy'])->name('admin_product_delete');
+    Route::get('show',[\App\Http\Controllers\Admin\ProductController::class, 'show'])->name('admin_product_show');
+
+  });
 });
 
 Route::get('/admin/login',[HomeController::class, 'login'])->name('admin_login');
