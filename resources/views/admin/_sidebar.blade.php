@@ -2,29 +2,31 @@
     <ul class="nav">
         <li class="nav-item">
             <a  href="{{route('admin_home') }}" class="nav-link">
-                <i class="icon-grid menu-icon"></i>
+                <i class="icon-grid menu-icon"> </i>
                 <span class="menu-title">Home</span>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <i class="icon-layout menu-icon"></i>
-                  <span class="menu-title">Category</span>
-                <i class="menu-arrow"></i>
+        <li class="nav-item has-treeview">
+            <a class="nav-link" href="{{route('admin_category') }}" >
+                <p>
+                <i class="icon-layout menu-icon"> </i>
+                  Taxi Category
+                </p>
             </a>
-            <div class="collapse" id="ui-basic">
-                <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="{{route('admin_category') }}">Category Seç</a></li>
-                    <!-- <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
-                     <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li> -->
+        <!-- <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href=" ">Category Seç</a></li>
+                     <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
+                     <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
                 </ul>
-            </div>
+            </div>  -->
+
         </li>
         <li class="nav-item has-treeview">
             <a href="{{route('admin_products')}}" class="nav-link">
                 <p>
-                    <i class="nav-icon fas fa-copy">  </i>
-                    Tickets
+                    <i class="icon-paper menu-icon">  </i>
+                    Products
                 </p>
 
             </a>
@@ -32,7 +34,7 @@
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
                 <i class="icon-columns menu-icon"></i>
-                <span class="menu-title">Flights </span>
+                <span class="menu-title">Reservation </span>
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="form-elements">

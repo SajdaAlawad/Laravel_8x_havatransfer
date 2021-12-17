@@ -33,8 +33,8 @@
                    <div class="card">
                        <div class="card-body">
 
-                           <div class="table-responsive pt-3">
-                               <table class="table table-bordered table-striped">
+                           <div class="table-responsive ">
+                               <table class="table table-bordered table-striped ">
                                    <thead>
                                    <tr>
                                        <th>id</th>
@@ -47,6 +47,7 @@
                                        <th>Km Price </th>
                                        <th>Capacity</th>
                                        <th>Image</th>
+                                       <th>Image Gallery</th>
                                        <th>Status</th>
                                        <th style="..." colspan="2">Actions</th>
                                    </tr>
@@ -66,13 +67,18 @@
                                        <td>{{$rs->aicraft_type_capacity}}</td>
                                        <td>
                                            @if ($rs->image)
-                                               <img src="{{route('m').Storage::url('app/public/'.$rs->image)}}" height="30" alt="">
+                                               <img src="{{Storage::url($rs->image)}}" height="30" alt="">
                                             @endif
                                        </td>
+                                       <td>
+                                           <a href="{{route('admin_image_add',['product_id' =>$rs->id])}}" onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')">
+                                               <img src="{{asset('assets/admin/image')}}/gallery.png" height="25"></a>
+                                       </td>
+
                                        <td> {{ $rs->status }}</td>
 
-                                       <td><a href="{{route('admin_product_edit',['id' =>$rs->id])}}">Edit</a></td>
-                                       <td> <a href="{{route('admin_product_delete',['id' =>$rs->id])}}" onclick="return confirm('Delete! are you sure?')">Delete</a></td>
+                                       <td><a href="{{route('admin_product_edit',['id' =>$rs->id])}}"><img src="{{asset('assets/admin/image')}}/edit.jfif" height="25"></a></td>
+                                       <td> <a href="{{route('admin_product_delete',['id' =>$rs->id])}}" onclick="return confirm('Delete! are you sure?')"><img src="{{asset('assets/admin/image')}}/delete.png" height="25"></a></td>
                                    </tr>
                                    @endforeach
                                    </tbody>

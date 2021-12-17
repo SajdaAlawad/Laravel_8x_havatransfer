@@ -113,7 +113,7 @@
                                         <option >True</option>
                                     </select>
                                 </div>
-                                <button type="submit" class="btn btn-primary mr-2">Add Ticket</button>
+                                <button type="submit" class="btn btn-primary mr-2">Add </button>
 
                             </form>
 

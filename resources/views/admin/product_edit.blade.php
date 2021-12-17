@@ -33,7 +33,7 @@
                 <div class="col-12 grid-margin stretch-card">
                     <div class="card">
 
-                            <form class="forms-sample" action="{{route('admin_product_update',['id'=>$data->id])}}" method="post">
+                            <form class="forms-sample" action="{{route('admin_product_update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label >Parent</label>
@@ -106,7 +106,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label >Image</label>
-                                    <input type="file" name="image" value="{{$data->image}}" class="form-control" >
+                                    <input type="file" name="image" class="form-control" >
 
                                     @if ($data->image)
                                         <img src="{{ Storage::url($data->image) }}" height="60" alt="">
@@ -121,7 +121,7 @@
                                         <option>False</option>
                                     </select>
                                 </div>
-                                <button type="submit" class="btn btn-primary mr-2">Update Ticket</button>
+                                <button type="submit" class="btn btn-primary mr-2">Update </button>
 
                             </form>
 
