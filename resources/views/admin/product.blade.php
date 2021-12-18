@@ -29,7 +29,7 @@
                </div>
 
 
-               <div class="col-lg-12 stretch-card">
+               <div class="col-lg-10 stretch-card">
                    <div class="card">
                        <div class="card-body">
 

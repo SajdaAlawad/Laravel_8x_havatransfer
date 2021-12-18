@@ -94,7 +94,9 @@ class ImageController extends Controller
     public function destroy(Image $image, $id ,$product_id)
     {
        $data = Image::find($id);
-       $data->delete();
+
+        $product_id=$data->product_id;
+        $data->delete();
        return redirect()->route('admin_image_add',['product_id'=>$product_id]);
     }
 }

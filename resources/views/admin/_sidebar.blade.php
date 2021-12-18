@@ -92,6 +92,15 @@
                 </ul>
             </div>
         </li>
+        <li class="nav-item has-treeview">
+            <a href="{{route('admin_setting')}}" class="nav-link">
+                <p>
+                    <i class="icon-paper menu-icon">  </i>
+                   Setting
+                </p>
+
+            </a>
+        </li>
       <!-- <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
                 <i class="icon-ban menu-icon"></i>

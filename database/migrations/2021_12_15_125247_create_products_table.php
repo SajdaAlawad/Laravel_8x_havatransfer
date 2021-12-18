@@ -27,7 +27,7 @@ class CreateProductsTable extends Migration
             $table->string('to')->nullable();
             $table->float('price_ticket')->nullable();
             $table->float('price_km')->nullable();
-            $table->integer('aicraft_type_capacity')->default('18');
+            $table->integer('aicraft_type_capacity')->default('4');
             $table->text('detail')->nullable();
             $table->string('slug',5)->nullable();
             $table->string('status')->nullable()->default('False');

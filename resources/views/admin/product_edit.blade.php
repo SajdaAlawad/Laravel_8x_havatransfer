@@ -23,7 +23,7 @@
                             <li class="breadcrumb-item"><a href="#">home</a>  </li>
                             <li class="breadcrumb-item"><a href="#">Edit </a>  </li>
                         </ol>
-                    </div>Ticket
+                    </div>
                 </div>
             </div>
         </section>

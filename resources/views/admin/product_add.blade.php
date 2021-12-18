@@ -4,9 +4,8 @@
  @section('javascript')
      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-     <!-- include summernote css/js -->
-     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+     <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
+
  @endsection
 @section('content')
 
@@ -88,12 +87,11 @@
 
                                 <div class="form-group">
                                     <label >Detail</label>
-                                    <textarea id="summernote" name="detail"></textarea>
+                                    <textarea name="detail"></textarea>
                                     <script>
-                                        $(document).ready(function() {
-                                            $('#summernote').summernote();
-                                        });
+                                        CKEDITOR.replace( 'detail' );
                                     </script>
+
                                 </div>
 
                                 <div class="form-group">

@@ -113,7 +113,8 @@ class ProductController extends Controller
         $data->price_km = $request->input('price_km');
         $data->aicraft_type_capacity = $request->input('aicraft_type_capacity');
         $data->detail = $request->input('detail');
-        if ($request->input('image')) {
+
+        if ($request->file('image')) {
             $data->image = Storage::putFile('images', $request->file('image'));
         }
         $data->save();
