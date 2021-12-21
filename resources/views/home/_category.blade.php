@@ -1,4 +1,3 @@
-
 <!--==============================Content=================================-->
 <div class="content"><div class="ic">More Website Templates @ TemplateMonster.com - February 10, 2014!</div>
     <div class="container_12">

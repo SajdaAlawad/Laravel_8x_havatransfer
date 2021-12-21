@@ -31,13 +31,13 @@
                                 <div class="form-group">
                                     <label >Parent</label>
 
-                                    <select class="js-example-basic-single w-100" name="parent_id">
+                                    <select class="js-example-basic-single w-100" name="parent_id" style="width: 100%">
 
-                                        <option value="0" >Ana Category</option>
-
-
+                                        <option value="0" selected="selected" >Main Category</option>
                                         @foreach($datalist as $rs)
-                                        <option value="{{$rs->id}}" @if($rs->id == $data->parent_id) selected="selected" @endif>{{$rs->title}}</option>
+                                        <option value="{{$rs->id}}" @if($rs->id == $data->parent_id) selected="selected" @endif>
+                                          {{ \Add\Http\Controllers\admin\CategoryController::getParentsTree($rs, $rs->title) }}
+                                        </option>
                                         @endforeach
                                     </select>
                                 </div>

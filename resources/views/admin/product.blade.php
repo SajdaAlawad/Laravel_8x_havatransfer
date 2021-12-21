@@ -55,9 +55,11 @@
                                    <tbody>
 
                                    @foreach($datalist as $rs)
-                                   <tr class="table-info">
+                                     <tr class="table-info">
                                        <td> {{ $rs->id }}</td>
-                                       <td> {{ $rs->category_id }}</td>
+                                       <td>
+                                           {{ \App\Http\Controllers\admin\CategoryController::getParentsTree($rs->category, $rs->category->title) }}
+                                       </td>
                                        <td> {{ $rs->title }}</td>
                                        <td>{{ $rs->Ticket_type }} </td>
                                        <td> {{ $rs->from }}</td>

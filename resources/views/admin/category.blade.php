@@ -24,7 +24,7 @@
        <section class="content">
            <div class="card">
                <div class="card-header">
-                  <!-- <a href="{{route('admin_category_add')}}" type="button" class="btn btn-block btn-info" style="width: 200px">Add Category</a> -->
+                  <!-- <a href="" type="button" class="btn btn-block btn-info" style="width: 200px">Add Category</a> -->
                    <a href="{{route('admin_category_add')}}" type="button" class="btn btn-inverse-info btn-fw" style="width:200px">Add Category</a>
                </div>
 
@@ -49,7 +49,9 @@
                                    @foreach($datalist as $rs)
                                    <tr class="table-info">
                                        <td> {{ $rs->id }}</td>
-                                       <td>{{ $rs->parent_id }} </td>
+                                       <td>
+                                           {{ \App\Http\Controllers\admin\CategoryController::getParentsTree($rs, $rs->title) }}
+                                       </td>
                                        <td> {{ $rs->title }}</td>
                                        <td> {{ $rs->status }}</td>
                                        <td><a href="{{route('admin_category_edit',['id' =>$rs->id])}}">Edit</a></td>

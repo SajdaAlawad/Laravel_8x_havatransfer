@@ -5,8 +5,8 @@
 @section('javascript')
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
+
 @endsection
 
 @section('content')
@@ -55,7 +55,7 @@
                                        <a class="nav-link" data-toggle="tab" href="#references">references</a>
                                    </li>
                                </ul>
-                            </div>>
+                            </div>
                                <div class="tab-content">
                                    <div class="tab-pane fade show active" id="general" role="tabpanel">
                                        <div class="pt-4">
@@ -106,7 +106,6 @@
                                    </div>
                                    <div class="tab-pane fade" id="smtp">
                                        <div class="pt-4">
-
                                            <div class="form-group">
                                                <label >Smtpserver </label>
                                                <input type="text" name="smtpserver" value="{{$data->smtpserver}}" class="form-control" >
@@ -158,6 +157,9 @@
                                                <label>Aboutus</label>
                                                <textarea id="aboutus" name="aboutus"> {{$data->aboutus}} </textarea>
                                            </div>
+                                           <script>
+                                               CKEDITOR.replace( 'aboutus' );
+                                           </script>
                                        </div>
                                    </div>
 
@@ -167,6 +169,10 @@
                                                <label>Contact</label>
                                                <textarea id="contact" name="contact" >{{$data->contact}} </textarea>
                                            </div>
+                                           <script>
+                                               CKEDITOR.replace('contact')
+                                           </script>
+
                                        </div>
                                    </div>
 
@@ -177,12 +183,9 @@
                                                <textarea id="references" name="references" >{{$data->references}}</textarea>
                                            </div>
                                            <script>
-                                               $(document).ready(function() {
-                                                   $('#aboutus').summernote();
-                                                   $('#contact').summernote();
-                                                   $('#references').summernote();
-                                               });
+                                               CKEDITOR.replace( 'references' );
                                            </script>
+
                                        </div>
                                    </div>
                                </div>
