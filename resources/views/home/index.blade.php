@@ -1,10 +1,8 @@
 
 @extends('layouts.home')
 
-@section('title', 'HaveTransfer Sitesi')
-@section('description')
-    turkiye en guvenilir bulunduran havatransfer sitesi...
-@endsection
+@section('title', $setting->title)
+@section('description'){{ $setting->description }} @endsection
 @section('keywords')
 @section('slider')
 

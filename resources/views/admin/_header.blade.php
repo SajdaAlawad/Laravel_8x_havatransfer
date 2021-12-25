@@ -80,7 +80,7 @@
                     </a> -->
                     @auth
                     <a href="#" class="d-block">{{Auth::user()->name }}</a> <!--ben ekledim bu-->
-                    <a href="{{ route('admin_logout') }}" class="dropdown-item">
+                    <a href="{{ route('logout') }}" class="dropdown-item">
                         <i class="ti-power-off text-primary"></i>
                         Logout
                     </a>

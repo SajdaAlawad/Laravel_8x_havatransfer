@@ -33,8 +33,7 @@
                                     <select class="js-example-basic-single w-100" name="parent_id" style="...">
                                         <option value="0" selected="selected">Ana Category</option>
                                         @foreach($datalist as $rs)
-                                        <option value="{{$rs->id}}">{{ \Add\Http\Controllers\admin\CategoryController::getParentsTree($rs, $rs->title) }}</option>
-                                        @endforeach
+                                            <option value="{{$rs->id}}">{{ \Add\Http\Controllers\admin\CategoryController::getParentsTree($rs, $rs->title) }}</option>                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">

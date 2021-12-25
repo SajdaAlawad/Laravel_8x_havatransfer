@@ -6,6 +6,7 @@
                 <span class="menu-title">Home</span>
             </a>
         </li>
+
         <li class="nav-item has-treeview">
             <a class="nav-link" href="{{route('admin_category') }}" >
                 <p>

@@ -1,5 +1,5 @@
 
-        <div class="slider_wrapper">
+<div class="slider_wrapper">
     <div id="camera_wrap" class="">
         <div data-src="{{ asset('assets') }}/images/slide.jpg">
             <div class="caption fadeIn">

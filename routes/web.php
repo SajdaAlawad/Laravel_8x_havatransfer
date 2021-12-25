@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,14 +18,17 @@ Route::get('/home2', function () {
     return view('welcome');
 });
 Route::redirect('/anasayfa', '/home')->name('anasayfa');
+
 //Route::redirect('/anasayfa', '/home');
 
-Route::get('/', function () {
-    return view('home.index'); //parametre gondermesi
-})->name('m');
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/home', [HomeController::class, 'index'])->name('homepage');
 Route::get('/aboutus', [HomeController::class, 'index'])->name('aboutus');
+Route::get('/references', [HomeController::class, 'references'])->name('references');
+Route::get('/fag', [HomeController::class, 'fag'])->name('fag');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
 Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->whereNumber('id')->whereAlpha('name')->name('test');
 // admin
@@ -68,11 +72,21 @@ Route::prefix('product')->group(function ()
     Route::post('setting/update',[App\Http\Controllers\Admin\SettingController::class, 'update'])->name('admin_setting_update');
 });
 
+Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function () {
+    Route::get('/',[UserController::class, 'index'])->name('myprofile');
+});
+
+
+Route::middleware('auth')->prefix('user')->namespace('user')->group(function () {
+    Route::get('/profile',[UserController::class, 'index'])->name('userprofile');
+});
+
 Route::get('/admin/login',[HomeController::class, 'login'])->name('admin_login');
 Route::post('/admin/logincheck',[HomeController::class, 'logincheck'])->name('admin_logincheck');
-Route::get('/admin/logout',[HomeController::class, 'logout'])->name('admin_logout');
+Route::get('/logout',[HomeController::class, 'logout'])->name('logout');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    return redirect()->intended('/');
+//    return view('dashboard');
 })->name('dashboard');

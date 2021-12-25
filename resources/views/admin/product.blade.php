@@ -69,7 +69,7 @@
                                        <td>{{$rs->aicraft_type_capacity}}</td>
                                        <td>
                                            @if ($rs->image)
-                                               <img src="{{Storage::url($rs->image)}}" height="30" alt="">
+                                               <img src="{{\Illuminate\Support\Facades\Storage::url($rs->image)}}" height="30" alt="">
                                             @endif
                                        </td>
                                        <td>

@@ -108,7 +108,7 @@
         <div class="grid_5 prefix_1">
 
             <h3>Welcome</h3>
-            <img src="{{ asset('assets') }}/images/page1_1img.jpg" alt="" class="img_inner fleft">
+            <img src="{{ asset('assets') }}/images/img1.jpg" alt="" class="img_inner fleft">
             <div class="extra_wrapper">
                 <p>Lorem ipsum dolor sit ere amet, consectetur ipiscin.</p>
                 In mollis erat mattis neque facilisis, sit ametiol

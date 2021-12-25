@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,15 +15,26 @@ class HomeController extends Controller
     }
 
 #bu dogru yanlis bilmiyorum
-    public function home()
+    public static function getsetting()
     {
-        //homeindex sayfasi cagrdim
-        return view('home.index');
+        return Setting::first();
     }
     public function index()
     {
-        //index sayfasi cagrdim
-        return view('home.index');
+        $setting = Setting::first();
+
+        return view('home.index', ['setting' => $setting,'page'=>'home']);
+    }
+
+
+    public function contact()
+    {
+        return view('home.about');
+    }
+
+    public function faq()
+    {
+        return view('home.about');
     }
 
      public function login()

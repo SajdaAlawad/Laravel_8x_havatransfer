@@ -58,7 +58,7 @@ class ProductController extends Controller
         $data->aicraft_type_capacity = $request->input('aicraft_type_capacity');
         $data->detail = $request->input('detail');
 
-        if ($request->input('image')) {
+        if ($request->file('image')) {
             $data->image = Storage::putFile('images', $request->file('image')); //file upload
         }
         $data->save();

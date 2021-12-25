@@ -105,7 +105,7 @@ h3.head1 {
 h4 {
     font-size: 24px;
     line-height: 27px;
-    color: #002747;
+    color: #f5f5f5;
     padding-top: 72px;
     margin-bottom: 16px;
 }
@@ -308,7 +308,7 @@ header h1 a {
     height: 57px;
 	font-size: 0;
 	line-height: 0;
-	
+
 	text-indent: -999px;
 	transition: 0s ease;
 	-o-transition: 0s ease;
@@ -541,7 +541,7 @@ a.link1:hover {
     position: relative;
     padding-top: 18px;
 }
- 
+
 
 .map figure {
     margin-top: 8px;
@@ -603,13 +603,13 @@ a.link-1:hover {
 
 footer {
 	display: block;
-    padding: 0px 0 60px;
+    padding: 0px 0 10px;
     color: #a3afba;
     font-family: 'Open Sans', sans-serif;
 }
 
 .socials {
-    padding-top: 33px;
+    padding-top: 0px;
     float: right;
 }
 
@@ -721,7 +721,7 @@ footer {
 
 .camera_prev {
     margin-left: -374px;
-} 
+}
 
 .camera_next  {
     margin-right: -374px;
@@ -776,7 +776,7 @@ header {
     bottom: 60px;
     top: auto;
     margin-top: 0;
-} 
+}
 
 .camera_next  {
     margin-right: 0;
@@ -794,7 +794,7 @@ header {
 
 .banner {
     margin-bottom: 25px;
-} 
+}
 
 .block1 {
     margin-bottom: 30px;
