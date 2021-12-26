@@ -1,9 +1,4 @@
 <div class="row mt-5 align-items-center">
-    <div class="col-md-2 text-center mb-5">
-        <div class="avatar avatar-xl">
-            <img src="{{ asset('assets') }}/images/facekiz.jfif" alt="..." class="avatar-img rounded-circle">
-        </div>
-    </div>
     <div class="col">
         <div class="row mb-4">
          <div class="col-md-7">

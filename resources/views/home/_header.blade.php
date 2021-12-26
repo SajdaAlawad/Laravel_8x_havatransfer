@@ -6,10 +6,20 @@
                 <nav class="horizontal-nav full-width horizontalNav-notprocessed">
                     <ul class="sf-menu">
                         <li class="current"><a href="{{route('home')}}">Home</a></li>
-                        <li><a href="{{route('aboutus')}}">About</a></li>
+                        <li><a href="{{route('home')}}">New Products</a></li>
                         @include('home.categoryNavigation')
 
-                        <li><a href="{{route('fag')}}">FAG</a></li>
+{{--                        <li><a href="{{route('fag')}}">FAG</a></li>--}}
+                        @auth
+                        <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">OUR INFORMATION</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{route('aboutus')}}">About Us</a></li>
+                                <li><a href="{{route('references')}}">References</a></li>
+                                <li><a href="{{route('contact')}}">Contact</a></li>
+                                <li><a href="{{route('fag')}}">Faq</a></li>
+                            </ul>
+                        </li>
+                        @endauth
                         @auth
                             <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Welecome: {{Illuminate\Support\Facades\Auth::user()->name}}</a>
                                 <ul class="dropdown-menu">

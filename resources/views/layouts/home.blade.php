@@ -71,21 +71,21 @@
 
 <body class="page1" id="top">
 @include('home._header')
-@yield('slider')
-<!---------navipation----->
-<div id="navipation">
-
-    <div class="container">
-        <div id="reponsive-nav">
-        @include('home._category')
-      </div>
-   </div>
+@include('home._slider')
+<div class="content">
+    @yield('content')
 </div>
-<!---------endnavipation----->
-@section('content')
-    icerik alani
-    @show
+
 @include('home._footer')
-@yield('footerjs')
+<script>
+    $(function (){
+        $('#bookingForm').bookingForm({
+            ownerEmail: '#'
+        });
+    })
+    $(function() {
+        $('#bookingForm input, #bookingForm textarea').placeholder();
+    });
+</script>
 </body>
 </html>

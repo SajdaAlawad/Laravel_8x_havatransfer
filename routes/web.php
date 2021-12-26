@@ -25,7 +25,7 @@ Route::redirect('/anasayfa', '/home')->name('anasayfa');
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/home', [HomeController::class, 'index'])->name('homepage');
-Route::get('/aboutus', [HomeController::class, 'index'])->name('aboutus');
+Route::get('/aboutus', [HomeController::class, 'aboutus'])->name('aboutus');
 Route::get('/references', [HomeController::class, 'references'])->name('references');
 Route::get('/fag', [HomeController::class, 'fag'])->name('fag');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
