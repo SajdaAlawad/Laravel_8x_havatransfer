@@ -286,7 +286,7 @@ header {
 }
 
 .page1 header {
-    background: none;
+    /*background: none;*/
     position: absolute;
     left: 0;
     z-index: 999;

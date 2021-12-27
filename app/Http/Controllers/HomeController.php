@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Admin\CategoryController;
+
 use App\Models\Category;
+use App\Models\Message;
+use App\Models\Product;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,7 +26,22 @@ class HomeController extends Controller
     public function index()
     {
         $setting = Setting::first();
-        return view('home.index', ['setting' => $setting,'page'=>'home']);
+        $slider = Product::select('id','title','image','price_ticket','slug')->limit(4)->get();
+//        print_r($slider);
+//        exit();
+        $data=[
+            'setting'=>$setting,
+            'slider'=>$slider,
+            'page'=>'home'
+        ];
+        return view('home.index',$data);
+    }
+
+    public function product($id,$slug)
+    {
+        $data= Product::find($id);
+        print_r($data);
+        exit();
     }
 
     public function aboutus()
@@ -44,6 +63,11 @@ class HomeController extends Controller
     }
     public function sendmessage(Request $request)
     {
+        $request->validate([
+            'name' => 'required| max:255',
+            'subject' => 'required',
+        ]);
+
         $data = new Message();
         $data->name = $request->input('name');
         $data->email = $request->input('email');

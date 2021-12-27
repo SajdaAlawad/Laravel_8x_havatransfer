@@ -4,7 +4,7 @@
 @section('title', $setting->title)
 @section('description'){{ $setting->description }} @endsection
 @section('keywords')
-
+    @include('home._slider')
 
 
 @section('content')

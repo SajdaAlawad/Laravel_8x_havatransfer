@@ -25,6 +25,10 @@
                        <h3 class="section-title"> Form Contactt</h3>
                        <div class="grid_6 prefix_1">
                            @include('home.message')
+{{--                           //if i send message empty it will show error--}}
+                       @foreach ($errors->all() as $error)
+                               <li>{{ $error }}</li>
+                           @endforeach
                            <form id="checkout-form" class="clearfix" action="{{route('sendmessage')}}" method="post">
                                @csrf
                                <label class="name">
@@ -43,14 +47,12 @@
                                    <input class="input" type="text" name="city" placeholder="city">
                                </label>
                                <label class="message">
-                                   <textarea class="input" name="message" rows="6" placeholder="Message:" data-constraints='@Required @Length(min=20,max=999999)'></textarea>
-                                   <span class="empty-message">*This field is required.</span>
-                                   <span class="error-message">*The message is too short.</span>
+                                   <textarea class="input" name="message" rows="6" placeholder="Message:" ></textarea>
                                </label>
                                <div>
                                    <div class="clear"></div>
                                    <div class="btns">
-                                       <a href="#" data-type="submit" class="btn">Submit</a>
+                                       <input type="submit">
                                    </div>
                                </div>
                            </form>

@@ -31,7 +31,9 @@ Route::get('/aboutus', [HomeController::class, 'aboutus'])->name('aboutus');
 Route::get('/references', [HomeController::class, 'references'])->name('references');
 Route::get('/fag', [HomeController::class, 'fag'])->name('fag');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
-Route::get('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
+Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
+Route::get('/product/{id}/{slug}', [HomeController::class, 'product'])->name('product');
+
 
 Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->whereNumber('id')->whereAlpha('name')->name('test');
 // admin
@@ -87,6 +89,7 @@ Route::prefix('product')->group(function ()
 
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function () {
     Route::get('/',[UserController::class, 'index'])->name('myprofile');
+    Route::get('/p', [UserController::class, 'index'])->name('profile.show');
 });
 
 

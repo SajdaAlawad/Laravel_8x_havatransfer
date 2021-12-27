@@ -1,3 +1,6 @@
+<?php
+use App\Http\Controllers\Admin\CategoryController
+?>
 @extends('layouts.admin')
 
 @section('title', 'Edit Category ')
@@ -36,7 +39,7 @@
                                         <option value="0" selected="selected" >Main Category</option>
                                         @foreach($datalist as $rs)
                                         <option value="{{$rs->id}}" @if($rs->id == $data->parent_id) selected="selected" @endif>
-                                          {{ \Add\Http\Controllers\admin\CategoryController::getParentsTree($rs, $rs->title) }}
+                                          {{ CategoryController::getParentsTree($rs, $rs->title) }}
                                         </option>
                                         @endforeach
                                     </select>

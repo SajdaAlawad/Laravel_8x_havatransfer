@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ asset('assets') }}/css/camera.css">
     <link rel="stylesheet" href="{{ asset('assets') }}/css/owl.carousel.css">
     <link rel="stylesheet" href="{{ asset('assets') }}/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets') }}/css/form.css">
     <script src="{{ asset('assets') }}/js/jquery.js"></script>
     <script src="{{ asset('assets') }}/js/jquery-migrate-1.2.1.js"></script>
     <script src="{{ asset('assets') }}/js/script.js"></script>
@@ -71,7 +72,7 @@
 
 <body class="page1" id="top">
 @include('home._header')
-@include('home._slider')
+
 <div class="content">
     @yield('content')
 </div>
