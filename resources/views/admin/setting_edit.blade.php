@@ -172,7 +172,6 @@
                                            <script>
                                                CKEDITOR.replace('contact')
                                            </script>
-
                                        </div>
                                    </div>
 
@@ -180,9 +179,11 @@
                                        <div class="pt-4">
                                            <div class="form-group">
                                                <label>References</label>
-{{--                                               <textarea id="references" name="references" >{{$data->references}}</textarea>--}}
+                                             <textarea id="references" name="references" >{{$data->references}}</textarea>
                                            </div>
-
+                                           <script>
+                                               CKEDITOR.replace('references')
+                                           </script>
                                        </div>
                                    </div>
                                </div>

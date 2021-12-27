@@ -22,34 +22,34 @@
                         {!! $setting->contact !!}
                     </div>
                    <div class="col-md-5">
-                       <h3 class="success-message"> Form Contactt</h3>
+                       <h3 class="section-title"> Form Contactt</h3>
                        <div class="grid_6 prefix_1">
-                           <h3>GET IN TOUCH</h3>
-                           <form id="form">
+                           @include('home.message')
+                           <form id="checkout-form" class="clearfix" action="{{route('sendmessage')}}" method="post">
+                               @csrf
                                <label class="name">
-                                   <input type="text" placeholder="Name:" data-constraints="@Required @JustLetters" />
-                                   <span class="empty-message">*This field is required.</span>
-                                   <span class="error-message">*This is not a valid name.</span>
+                                   <input class="input" type="text" name="name" placeholder="Name & Surename">
+                               </label>
+                               <label class="phone">
+                                   <input class="input" type="text" name="phone" placeholder="Phone Number">
                                </label>
                                <label class="email">
-                                   <input type="text" placeholder="Email:" data-constraints="@Required @Email" />
-                                   <span class="empty-message">*This field is required.</span>
-                                   <span class="error-message">*This is not a valid email.</span>
+                                   <input class="email" type="text" name="email" placeholder="email">
                                </label>
-                               <label class="country">
-                                   <input type="text" placeholder="Country:" data-constraints="@Required @JustLetters"/>
-                                   <span class="empty-message">*This field is required.</span>
-                                   <span class="error-message">*This is not a valid phone.</span>
+                               <label class="subject">
+                                   <input class="input" type="text" name="subject" placeholder="subject">
+                               </label>
+                               <label class="subject">
+                                   <input class="input" type="text" name="city" placeholder="city">
                                </label>
                                <label class="message">
-                                   <textarea placeholder="Message:" data-constraints='@Required @Length(min=20,max=999999)'></textarea>
+                                   <textarea class="input" name="message" rows="6" placeholder="Message:" data-constraints='@Required @Length(min=20,max=999999)'></textarea>
                                    <span class="empty-message">*This field is required.</span>
                                    <span class="error-message">*The message is too short.</span>
                                </label>
                                <div>
                                    <div class="clear"></div>
                                    <div class="btns">
-                                       <a href="#" data-type="reset" class="btn">Clear</a>
                                        <a href="#" data-type="submit" class="btn">Submit</a>
                                    </div>
                                </div>

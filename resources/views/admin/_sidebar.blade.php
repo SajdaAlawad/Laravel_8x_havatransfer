@@ -29,7 +29,15 @@
                     <i class="icon-paper menu-icon">  </i>
                     Products
                 </p>
+            </a>
+        </li>
 
+        <li class="nav-item has-treeview">
+            <a href="{{route('admin_message')}}" class="nav-link">
+                <p>
+                    <i class="icon-paper menu-icon">  </i>
+                    Contact Message
+                </p>
             </a>
         </li>
         <li class="nav-item">
