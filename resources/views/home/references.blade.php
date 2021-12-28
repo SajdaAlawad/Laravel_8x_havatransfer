@@ -8,12 +8,12 @@
     <div id="breadcrumb">
         <div class="container">
             <ul class="breadcrumb">
-                <li><a href="{{route('home')}}">Home</a></li>
-                <li class="active">References</li>
+                <li><a href="{{route('home')}}">Home</a> / <a href="#">References</a></li>
+
             </ul>
         </div>
     </div>
-    <div class="content">
+    <div class="content1">
         <div class="container_12">
             <div class="grid_12">
                 <div class=" ">

@@ -15,7 +15,7 @@
         <div class="grid_4">
             <div class="banner">
 {{--              ahmed soracagim  <a href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug])}}"></a>--}}
-                <img src="{{ Storage::url($rs->image)}}" style="height:200px" alt="">
+                <img src="{{ Storage::url($rs->image)}}" style="height:300px " alt="">
                 <div class="label">
                     <div class="title">{{$rs->title}}</div>
                     <div class="price">FROM<span>{{$rs->price_ticket}}</span></div>
@@ -124,8 +124,9 @@
         </div>
 
         <div class="grid_12">
-            <h3 class="head1">Latest Vehicle</h3>
+            <h3 >Latest Vehicle</h3>
         </div>
+  <br> <br> <br>
             @foreach($last as $rs)
                 <div class="grid_4">
                     <div class="banner">

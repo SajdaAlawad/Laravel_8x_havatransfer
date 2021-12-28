@@ -112,6 +112,7 @@ h4 {
 
 .page1 h3 {
     padding-top: 69px;
+    padding-bottom: 50px;
     margin-bottom: 41px;
 }
 
@@ -274,6 +275,17 @@ a.btn:hover {
 }
 /*header*/
 
+
+.page1 {
+    background: inherit;
+    position: absolute;
+    left: 0;
+    z-index: 999;
+    right: 0;
+    top: 0;
+    padding-bottom: 0;
+}
+
 header {
 	display: block;
     background: url(../images/slide.jpg) center 0 repeat-x;
@@ -283,16 +295,6 @@ header {
     -o-background-size: 100% auto;
     background-size: 100% auto;
     padding-bottom: 98px;
-}
-
-.page1 header {
-    background: none;
-    position: absolute;
-    left: 0;
-    z-index: 999;
-    right: 0;
-    top: 0;
-    padding-bottom: 0;
 }
 
 header h1 {
@@ -308,7 +310,7 @@ header h1 a {
     height: 57px;
 	font-size: 0;
 	line-height: 0;
-	
+
 	text-indent: -999px;
 	transition: 0s ease;
 	-o-transition: 0s ease;
@@ -322,10 +324,10 @@ header h1 a img {
 
 .content {
     background-color: #fff;
-    padding-bottom: 120px;
+    padding-bottom: 100px;
 }
 .page1  .content {
-    padding-bottom: 115px;
+    padding-bottom: 120px;
 }
 
 .banner {
@@ -541,7 +543,7 @@ a.link1:hover {
     position: relative;
     padding-top: 18px;
 }
- 
+
 
 .map figure {
     margin-top: 8px;
@@ -721,7 +723,7 @@ footer {
 
 .camera_prev {
     margin-left: -374px;
-} 
+}
 
 .camera_next  {
     margin-right: -374px;
@@ -776,7 +778,7 @@ header {
     bottom: 60px;
     top: auto;
     margin-top: 0;
-} 
+}
 
 .camera_next  {
     margin-right: 0;
@@ -794,7 +796,7 @@ header {
 
 .banner {
     margin-bottom: 25px;
-} 
+}
 
 .block1 {
     margin-bottom: 30px;
