@@ -1,13 +1,14 @@
 @extends('layouts.home')
 @section('title', 'User Profile')
 @section('description')user page description @endsection
+
+
 @section('content')
     <div class="content">
         <div class="container_12">
                 <div class="container">
                     <ul>
-                    <li><a href="{{route('home')}}">Home</a></li>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="{{route('home')}}">Home</a> / <a href="#">About Us</a></li>
                     </ul>
                 </div>
             <div class="grid_2">

@@ -3,44 +3,27 @@
 
 @section('title', $setting->title)
 @section('description'){{ $setting->description }} @endsection
-@section('keywords')
-    @include('home._slider')
+@section('keywords', $setting->keywords)
 
-
+@include('home._slider')
 @section('content')
 
-    <div class="ic">More Website Templates @ TemplateMonster.com - February 10, 2014!</div>
+
+
     <div class="container_12">
+        @foreach($daily as $rs)
         <div class="grid_4">
             <div class="banner">
-                <img src=" {{ asset('assets') }}/images/ban_img1.jpg" alt="">
+{{--              ahmed soracagim  <a href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug])}}"></a>--}}
+                <img src="{{ Storage::url($rs->image)}}" style="height:200px" alt="">
                 <div class="label">
-                    <div class="title">Barcelona</div>
-                    <div class="price">FROM<span>$ 1000</span></div>
-                    <a href="#">LEARN MORE</a>
+                    <div class="title">{{$rs->title}}</div>
+                    <div class="price">FROM<span>{{$rs->price_ticket}}</span></div>
+                    <a href="{{route('addtocart',['id'=>$rs->id])}}">Reserve</a>
                 </div>
             </div>
         </div>
-        <div class="grid_4">
-            <div class="banner">
-                <img src="{{ asset('assets') }}/images/ban_img2.jpg" alt="">
-                <div class="label">
-                    <div class="title">GOA</div>
-                    <div class="price">FROM<span>$ 1.500</span></div>
-                    <a href="#">LEARN MORE</a>
-                </div>
-            </div>
-        </div>
-        <div class="grid_4">
-            <div class="banner">
-                <img src="{{ asset('assets') }}/images/ban_img3.jpg" alt="">
-                <div class="label">
-                    <div class="title">PARIS</div>
-                    <div class="price">FROM<span>$ 1.600</span></div>
-                    <a href="#">LEARN MORE</a>
-                </div>
-            </div>
-        </div>
+        @endforeach
         <div class="clear"></div>
         <div class="grid_6">
             <h3>Booking Form</h3>
@@ -139,36 +122,24 @@
                 </div>
             </blockquote>
         </div>
+
         <div class="grid_12">
-            <h3 class="head1">Latest News</h3>
+            <h3 class="head1">Latest Vehicle</h3>
         </div>
-        <div class="grid_4">
-            <div class="block1">
-                <time datetime="2014-01-01">10<span>Jan</span></time>
-                <div class="extra_wrapper">
-                    <div class="text1 col1"><a href="#">Aliquam nibh</a></div>
-                    Proin pharetra luctus diam, any scelerisque eros convallisumsan. Maecenas vehicula egestas
+            @foreach($last as $rs)
+                <div class="grid_4">
+                    <div class="banner">
+                        {{--              ahmed soracagim  <a href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug])}}"></a>--}}
+                        <img src="{{ Storage::url($rs->image)}}" style="height:200px" alt="">
+                        <div class="label">
+                            <div class="title">{{$rs->title}}</div>
+                            <div class="price">FROM<span>{{$rs->price_ticket}}</span></div>
+                            <a href="{{route('addtocart',['id'=>$rs->id])}}">Reserve</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="grid_4">
-            <div class="block1">
-                <time datetime="2014-01-01">21<span>Jan</span></time>
-                <div class="extra_wrapper">
-                    <div class="text1 col1"><a href="#">Etiam dui eros</a></div>
-                    Any scelerisque eros vallisumsan. Maecenas vehicula egestas natis. Duis massa elit, auctor non
-                </div>
-            </div>
-        </div>
-        <div class="grid_4">
-            <div class="block1">
-                <time datetime="2014-01-01">15<span>Feb</span></time>
-                <div class="extra_wrapper">
-                    <div class="text1 col1"><a href="#">uamnibh Edeto</a></div>
-                    Ros convallisumsan. Maecenas vehicula egestas venenatis. Duis massa elit, auctor non
-                </div>
-            </div>
-        </div>
+
+        @endforeach
     </div>
 
 @endsection
