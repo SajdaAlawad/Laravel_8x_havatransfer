@@ -19,6 +19,8 @@
                     <div class="col-md-4">
                         <h3 class="success-message">Contact Information</h3>
                         {!! $setting->contact !!}
+
+
                     </div>
 
                 </div>
