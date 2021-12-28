@@ -3,9 +3,9 @@
 <ul class="dropdown-menu" role="menu">
     @foreach($children  as $category)
         @if(count($category->children))
-{{--         @include('home.categoryTree',['children'=>$category->children])--}}
+         @include('home.categoryTree',['children'=>$category->children])
         @else
-            <li><a href="#">{{$category->title}}</a></li>
+            <li><a href="{{route('categoryproducts',['id'=>$category->id,'slug'=>$category->title])}}">{{$category->title}}</a></li>
         @endif
     @endforeach
 </ul>

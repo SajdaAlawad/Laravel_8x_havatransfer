@@ -72,7 +72,7 @@
 
 <body class="page1" id="top">
 @include('home._header')
-
+@include('home._slider')
 <div class="content">
     @yield('content')
 </div>
