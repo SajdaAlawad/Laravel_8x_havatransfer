@@ -92,8 +92,8 @@ h3 {
     font-size: 30px;
     line-height: 27px;
     color: #002747;
-    padding-top: 116px;
-    margin-bottom: 17px;
+    padding-top: 20px;
+    margin-bottom: 20px;
     font-weight: normal;
 }
 
@@ -111,9 +111,9 @@ h4 {
 }
 
 .page1 h3 {
-    padding-top: 69px;
-    padding-bottom: 45px;
-    margin-bottom: 41px;
+    padding-top: 5px;
+    padding-bottom: -16px;
+    margin-bottom: 29px;
 }
 
 .page1 h3.head1 {
@@ -263,7 +263,7 @@ a.btn:hover {
 	text-align: center;
 }
 .wrapper, .extra_wrapper {
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 .clear {
 	float: none !important;
