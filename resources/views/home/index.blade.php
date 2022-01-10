@@ -131,7 +131,7 @@
                 <div class="grid_4">
                     <div class="banner">
                         {{--              ahmed soracagim  <a href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug])}}"></a>--}}
-                        <img src="{{ Storage::url($rs->image)}}" style="height:200px" alt="">
+                        <img src="{{ Storage::url($rs->image)}}" style="height:200px; width: 263px;" alt="">
                         <div class="label">
                             <div class="title">{{$rs->title}}</div>
                             <div class="price">FROM<span>{{$rs->price_ticket}}</span></div>

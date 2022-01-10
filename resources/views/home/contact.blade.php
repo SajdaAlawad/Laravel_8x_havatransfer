@@ -19,16 +19,10 @@
                     <div class="col-md-4">
                         <h3 class="success-message">Contact Information</h3>
                         {!! $setting->contact !!}
-
-
                     </div>
 
                 </div>
             </div>
-
-
-
-
             <div class="grid_6 prefix_1">
                 <h3>GET IN TOUCH</h3>
                 @include('home.message')

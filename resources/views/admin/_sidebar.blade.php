@@ -11,7 +11,7 @@
             <a class="nav-link" href="{{route('admin_category') }}" >
                 <p>
                 <i class="icon-layout menu-icon"> </i>
-                  Taxi Category
+                   Category
                 </p>
             </a>
         <!-- <div class="collapse" id="ui-basic">
@@ -37,6 +37,14 @@
                 <p>
                     <i class="icon-paper menu-icon">  </i>
                     Contact Message
+                </p>
+            </a>
+        </li>
+        <li class="nav-item has-treeview">
+            <a href="{{route('admin_review')}}" class="nav-link">
+                <p>
+                    <i class="icon-paper menu-icon">  </i>
+                    Reviews
                 </p>
             </a>
         </li>

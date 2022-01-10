@@ -57,7 +57,7 @@ use App\Http\Controllers\Admin\CategoryController
 
                                 <div class="form-group">
                                     <label >Slug</label>
-                                    <input type="text" name="title" class="form-control" >
+                                    <input type="text" name="slug" class="form-control" >
                                 </div>
 
                                 <div class="form-group">

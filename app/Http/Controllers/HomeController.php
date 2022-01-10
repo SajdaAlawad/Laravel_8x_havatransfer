@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Admin\CategoryController;
 
+use App\Http\Livewire\Review;
 use App\Models\Category;
 use App\Models\Image;
 use App\Models\Message;
@@ -24,6 +25,15 @@ class HomeController extends Controller
     {
         return Setting::first();
     }
+    public static function countreview($id)
+    {
+        return Review::where('product_id',$id)->count();
+    }
+    public static function avrgreview($id)
+    {
+        return Review::where('product_id',$id)->average('rate');
+    }
+
     public function index()
     {
         $setting = Setting::first();
@@ -47,9 +57,11 @@ class HomeController extends Controller
 
         $data = Product::find($id);
         $datalist = Image::where('product_id',$id)->get();
+        $reviews = Review::where('product_id',$id)->get();
+
         #print_r($data);
         #exit();
-        return view('home.product_detail',['data'=>$data,'datalist'=>$datalist]);
+        return view('home.product_detail',['data'=>$data,'datalist'=>$datalist,'reviews'=>$reviews]);
     }
 
 

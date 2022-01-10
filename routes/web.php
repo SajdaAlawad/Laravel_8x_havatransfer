@@ -32,6 +32,7 @@ Route::get('/references', [HomeController::class, 'references'])->name('referenc
 Route::get('/fag', [HomeController::class, 'fag'])->name('fag');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
+Route::get('/getproduct', [HomeController::class, 'getproduct'])->name('getproduct');
 Route::get('/product/{id}/{slug}', [HomeController::class, 'product'])->name('product');
 Route::get('/categoryproducts/{id}/{slug}', [HomeController::class, 'categoryproducts'])->name('categoryproducts');
 Route::get('/addtocart/{id}', [HomeController::class, 'addtocart'])->name('addtocart');
@@ -85,6 +86,15 @@ Route::prefix('product')->group(function ()
         Route::get('show',[\App\Http\Controllers\Admin\ImageController::class, 'show'])->name('admin_image_show');
 
     });
+    #review
+    Route::prefix('review')->group(function ()
+    {
+        Route::get('/',[\App\Http\Controllers\Admin\ReviewController::class, 'index'])->name('admin_review');
+        Route::post('update/{id}',[\App\Http\Controllers\Admin\ReviewController::class, 'update'])->name('admin_review_update');
+        Route::get('delete/{id}',[\App\Http\Controllers\Admin\ReviewController::class, 'destroy'])->name('admin_review_delete');
+        Route::get('show/{id}',[\App\Http\Controllers\Admin\ReviewController::class, 'show'])->name('admin_review_show');
+
+    });
     #setting
     Route::get('setting',[App\Http\Controllers\Admin\SettingController::class, 'index'])->name('admin_setting');
     Route::post('setting/update',[App\Http\Controllers\Admin\SettingController::class, 'update'])->name('admin_setting_update');
@@ -92,7 +102,9 @@ Route::prefix('product')->group(function ()
 
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function () {
     Route::get('/',[UserController::class, 'index'])->name('myprofile');
-    Route::get('/p', [UserController::class, 'index'])->name('profile.show');
+    Route::get('/myreviews', [UserController::class, 'myreviews'])->name('myreviews');
+    Route::get('/destroymyreviews/{id}', [ReviewController::class, 'destroymyreviews'])->name('user_review_delete');
+
 });
 
 
