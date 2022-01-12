@@ -16,7 +16,7 @@
                                 <li><a href="{{route('aboutus')}}">About Us</a></li>
                                 <li><a href="{{route('references')}}">References</a></li>
                                 <li><a href="{{route('contact')}}">Contact</a></li>
-                                <li><a href="{{route('fag')}}">Faq</a></li>
+                                <li><a href="{{route('faq')}}">Faq</a></li>
                             </ul>
                         </li>
                         @endauth
@@ -25,7 +25,7 @@
                                 <ul class="dropdown-menu">
                                     <li><a href="index_op_fullscreen_gradient_overlay.html">Profile</a></li>
                                     <li><a href="{{ route('myprofile') }}">My Account</a></li>
-                                    <li><a href="{{ route('myprofile') }}">My Review</a></li>
+                                    <li><a href="{{ route('myreviews') }}">My Review</a></li>
                                     <li><a href="{{route('logout')}}">logout</a></li>
                                 </ul>
                             </li>
@@ -38,13 +38,13 @@
                 <div class="clear"></div>
             </div>
         </div>
-        <div class="grid_12">
-            <h1>
-                <a class="logo" href="{{route('home')}}">
-                    <img src="{{ asset('assets') }}/images/logo.png" alt="Your Happy Family">
-                </a>
-            </h1>
-        </div>
+{{--        <div class="grid_12">--}}
+{{--            <h1>--}}
+{{--                <a class="logo" href="{{route('home')}}">--}}
+{{--                    <img src="{{ asset('assets') }}/images/logo.png" alt="Your Happy Family">--}}
+{{--                </a>--}}
+{{--            </h1>--}}
+{{--        </div>--}}
     </div>
 </header>
 

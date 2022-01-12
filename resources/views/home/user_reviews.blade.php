@@ -1,5 +1,8 @@
-<?php
-@extends('layouts.admin')
+
+@extends('layouts.home')
+@section('description')user reviews @endsection
+
+
 
 @section('title', 'My Review')
 
@@ -24,13 +27,14 @@
                 <div class="card-header">
                     @include('home.usermenu')
                 </div>
-                <div class="col-lg-10 stretch-card">
-                    <div class="card">
                         <div class="card-body">
+                            <div class="col-12 grid-margin stretch-card">
                             <div class="table-responsive ">
-                                <table class="table table-bordered table-striped ">
+                                <div class="card">
+                                <table id="example">
                                     <thead>
                                     <tr>
+
                                         <th>id</th>
                                         <th>Product</th>
                                         <th>Subject </th>
@@ -61,21 +65,52 @@
                                     @endforeach
                                     </tbody>
                                 </table>
+
+
+
+{{--                                <table class="table table-bordered table-striped ">--}}
+{{--                                    <thead>--}}
+{{--                                    <tr>--}}
+{{--                                        <th>id</th>--}}
+{{--                                        <th>Product</th>--}}
+{{--                                        <th>Subject </th>--}}
+{{--                                        <th>Review</th>--}}
+{{--                                        <th>Rate</th>--}}
+{{--                                        <th>Status</th>--}}
+{{--                                        <th>Date</th>--}}
+{{--                                        <th style="..." colspan="2">Actions</th>--}}
+{{--                                    </tr>--}}
+{{--                                    </thead>--}}
+{{--                                    <tbody>--}}
+{{--                                    @include('home.message')--}}
+{{--                                    @foreach($datalist as $rs)--}}
+{{--                                        <tr class="table-info">--}}
+{{--                                            <td> {{ $rs->id }}</td>--}}
+{{--                                            <td>--}}
+{{--                                                <a href="{{route('product',['id' =>$rs->product->id,'slug'=> $rs->product->slug])}}" target="_blank">--}}
+{{--                                                    {{$rs->product->title}}--}}
+{{--                                                </a>--}}
+{{--                                            </td>--}}
+{{--                                            <td> {{ $rs->subject }}</td>--}}
+{{--                                            <td>{{ $rs->review }} </td>--}}
+{{--                                            <td> {{ $rs->rate }}</td>--}}
+{{--                                            <td> {{ $rs->status }}</td>--}}
+{{--                                            <td>{{$rs->created_at}}</td>--}}
+{{--                                            <td> <a href="{{route('admin_review_delete',['id' =>$rs->id])}}" onclick="return confirm('Delete! are you sure?')"><img src="{{asset('assets/admin/image')}}/delete.png" height="25"></a></td>--}}
+{{--                                        </tr>--}}
+{{--                                    @endforeach--}}
+{{--                                    </tbody>--}}
+{{--                                </table>--}}
+
                             </div>
                         </div>
-                    </div>
-                </div>
-
-
-
-
-                <div class="card-footer">
-                    ...
-                </div>
-
-            </div>
-        </section>
+                  </div>
+              <div class="card-footer">
+            ...
+           </div>
+         </div>
     </div>
+
 
 @endsection
 @section('footer')

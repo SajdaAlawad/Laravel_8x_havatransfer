@@ -65,6 +65,13 @@
     <script src="{{ asset('assets') }}/js/html5shiv.js"></script>
     <link rel="stylesheet" media="screen" href="{{ asset('assets') }}/css/ie.css">
     <![endif]-->
+{{--    <---![user review table]>--}}
+    <link rel="stylesheet" href="{{ asset('assets') }}/jstable.css" />
+    <script src="{{ asset('assets') }}/jstable.min.js"></script>
+    <script src="{{ asset('assets') }}/polyfill-babel.min.js"></script>
+    <script src="{{ asset('assets') }}/polyfill-promise.min.js"></script>
+    <script src="{{ asset('assets') }}/polyfill-fetch.min.js"></script>
+
     @yield('css')
     @yield('headerjs')
 </head>

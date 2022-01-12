@@ -6,10 +6,9 @@
         </div>
      @endif
 
-     <input class="review-form" wire:submit.prevent="store">
+
          @csrf
          <div class="form-group">
-            <div class="success-message">Contact form submitted</div>
             </div>
             <div class="form-group">
              <input class="input" wire:model="subject" placeholder="Subject" />

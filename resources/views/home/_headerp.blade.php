@@ -16,7 +16,7 @@
                                 <li><a href="{{route('aboutus')}}">About Us</a></li>
                                 <li><a href="{{route('references')}}">References</a></li>
                                 <li><a href="{{route('contact')}}">Contact</a></li>
-                                <li><a href="{{route('fag')}}">Faq</a></li>
+                                <li><a href="{{route('faq')}}">Faq</a></li>
                             </ul>
                         </li>
                         @endauth

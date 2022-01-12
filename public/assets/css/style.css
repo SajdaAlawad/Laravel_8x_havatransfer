@@ -25,7 +25,7 @@ body {
 	position: relative;
 	min-width: 960px;
     background-color: #002141;
-    color: #737272;
+    color:#000000;
     font: 14px/20px 'Open Sans', sans-serif;
 }
 
@@ -541,7 +541,7 @@ a.link1:hover {
 /**Map**/
 
 .col1 {
-    color: #f3aa29;
+    color: #000000;
 }
 
 .map {

@@ -90,16 +90,16 @@
   width: 100%;
   font: 14px/20px 'Open Sans', sans-serif;
   height: 30px;
- 
+
 }
 
 
-#bookingForm input::-webkit-input-placeholder { 
-  color: #737272; 
+#bookingForm input::-webkit-input-placeholder {
+  color: #737272;
 }
 
 input::-webkit-input-placeholder ,
-textarea::-webkit-input-placeholder 
+textarea::-webkit-input-placeholder
 {color:#737272;}
 
 input::-moz-placeholder,
@@ -141,7 +141,7 @@ textarea::-moz-placeholder
   text-align: left;
   color: gray;
   margin: 5px 0px;
-  color: #F3AA29;
+  color: #000000;
 }
 /* transformSelect CSS */
 /* 1st type of select */

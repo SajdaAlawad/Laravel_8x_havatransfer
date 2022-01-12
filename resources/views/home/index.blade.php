@@ -8,8 +8,6 @@
 @include('home._slider')
 @section('content')
 
-
-
     <div class="container_12">
         @foreach($daily as $rs)
         <div class="grid_4">
