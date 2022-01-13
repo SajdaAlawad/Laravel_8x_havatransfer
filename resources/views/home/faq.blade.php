@@ -13,6 +13,9 @@
 @endsection
 
 @section('content')
+
+    <div class="content1">
+        <div class="container_12">
 <div class="breadcrumb">
     <div class="container">
         <ul class="breadcrumb">
@@ -36,4 +39,7 @@
         </div>
     </div>
 </div>
+        </div>
+    </div>
+
 @endsection

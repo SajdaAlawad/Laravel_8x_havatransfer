@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\admin\MessageController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LocationController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +33,8 @@ Route::get('/aboutus', [HomeController::class, 'aboutus'])->name('aboutus');
 Route::get('/references', [HomeController::class, 'references'])->name('references');
 Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/location', [HomeController::class, 'location'])->name('location');
+
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
 Route::get('/getproduct', [HomeController::class, 'getproduct'])->name('getproduct');
 Route::get('/product/{id}/{slug}', [HomeController::class, 'product'])->name('product');
@@ -77,7 +81,7 @@ Route::prefix('product')->group(function ()
 
     });
 
-
+    #product image galllery
     Route::prefix('image')->group(function ()
     {
         Route::get('create/{product_id}',[\App\Http\Controllers\Admin\ImageController::class, 'create'])->name('admin_image_add');
@@ -86,6 +90,7 @@ Route::prefix('product')->group(function ()
         Route::get('show',[\App\Http\Controllers\Admin\ImageController::class, 'show'])->name('admin_image_show');
 
     });
+
     #review
     Route::prefix('review')->group(function ()
     {
@@ -124,6 +129,37 @@ Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(fu
 
 Route::middleware('auth')->prefix('user')->namespace('user')->group(function () {
     Route::get('/profile',[UserController::class, 'index'])->name('userprofile');
+
+#product
+    Route::prefix('product')->group(function ()
+    {
+        Route::get('/',[ProductController::class, 'index'])->name('user_products');
+        Route::get('create',[ProductController::class, 'create'])->name('user_product_add');
+        Route::post('store',[ProductController::class, 'store'])->name('user_product_store');
+        Route::get('edit/{id}',[ProductController::class, 'edit'])->name('user_product_edit');
+        Route::post('update/{id}',[ProductController::class, 'update'])->name('user_product_update');
+        Route::get('delete/{id}',[ProductController::class, 'destroy'])->name('user_product_delete');
+        Route::get('show',[ProductController::class, 'show'])->name('user_product_show');
+
+    });
+
+   #Userproduct image galllery
+    Route::prefix('image')->group(function ()
+    {
+        Route::get('create/{product_id}',[\App\Http\Controllers\Admin\ImageController::class, 'create'])->name('user_image_add');
+        Route::post('store/{product_id}',[\App\Http\Controllers\Admin\ImageController::class, 'store'])->name('user_image_store');
+        Route::get('delete/{id}/{product_id}',[\App\Http\Controllers\Admin\ImageController::class, 'destroy'])->name('user_image_delete');
+        Route::get('show',[\App\Http\Controllers\Admin\ImageController::class, 'show'])->name('user_image_show');
+
+    });
+    #location
+    Route::prefix('location')->group(function ()
+    {
+        Route::get('/',[LocationController::class, 'index'])->name('user_location');
+        Route::post('store/{id}',[LocationController::class, 'store'])->name('user_location_store');
+        Route::post('update/{id}',[LocationController::class, 'store'])->name('user_location_store');
+        Route::get('delete/{id}',[LocationController::class, 'destroy'])->name('user_location_delete');
+    });
 });
 
 Route::get('/admin/login',[HomeController::class, 'login'])->name('admin_login');

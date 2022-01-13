@@ -27,12 +27,9 @@
                   <!-- <a href="" type="button" class="btn btn-block btn-info" style="width: 200px">Add Category</a> -->
                    <a href="{{route('admin_product_add')}}" type="button" class="btn btn-inverse-info btn-fw" style="width:200px">Add Taxi</a>
                </div>
-
-
                <div class="col-lg-10 stretch-card">
                    <div class="card">
                        <div class="card-body">
-
                            <div class="table-responsive ">
                                <table class="table table-bordered table-striped ">
                                    <thead>
@@ -89,10 +86,6 @@
                        </div>
                    </div>
                </div>
-
-
-
-
                <div class="card-footer">
                   ...
                </div>

@@ -12,8 +12,10 @@ class Review extends Component
     public $record, $subject,$review,$product_id,$rate;
     public function mount($id)
     {
-        $this->record=Product::findOrFail($id);
-        $this->product_id =$this->record->id;
+
+        $this->record = Product::find($id)->first();
+//        $this->record=Product::findOrFail($id);
+        $this->product_id =$id;
     }
     public function render()
     {
@@ -30,8 +32,8 @@ class Review extends Component
     public function store()
     {
         $this->validate([
-            'subject'=>'required|min:5',
-            'review'=>'required|min:10',
+            'subject'=>'required | min:5',
+            'review'=>'required | min:10',
             'rate' => 'required'
         ]);
         \App\Models\Review::create([
@@ -40,9 +42,9 @@ class Review extends Component
             'IP'=>$_SERVER['REMOTE_ADDR'],
             'rate' =>$this->rate,
             'subject'=>$this->subject,
-            'review'=>$this->review
+            'review'=>$this->review,
         ]);
-        session()->flash('message','Revire Send Successfully.');
+        session()->flash('message','Review Send Successfully.');
         $this->resetInput();
     }
 }

@@ -100,6 +100,13 @@ class HomeController extends Controller
         $setting = Setting::first();
         return view('home.contact', ['setting' => $setting]);
     }
+
+
+    public function location()
+    {
+        $setting = Setting::first();
+        return view('home.location', ['setting' => $setting]);
+    }
     public function sendmessage(Request $request)
     {
         $request->validate([

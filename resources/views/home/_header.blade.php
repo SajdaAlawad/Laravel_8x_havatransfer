@@ -26,6 +26,7 @@
                                     <li><a href="index_op_fullscreen_gradient_overlay.html">Profile</a></li>
                                     <li><a href="{{ route('myprofile') }}">My Account</a></li>
                                     <li><a href="{{ route('myreviews') }}">My Review</a></li>
+                                    <li><a href="{{ route('user_products') }}">My Products</a></li>
                                     <li><a href="{{route('logout')}}">logout</a></li>
                                 </ul>
                             </li>
