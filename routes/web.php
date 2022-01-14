@@ -4,6 +4,7 @@ use App\Http\Controllers\admin\MessageController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RezervationController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -156,10 +157,23 @@ Route::middleware('auth')->prefix('user')->namespace('user')->group(function () 
     Route::prefix('location')->group(function ()
     {
         Route::get('/',[LocationController::class, 'index'])->name('user_location');
-        Route::post('store/{id}',[LocationController::class, 'store'])->name('user_location_store');
-        Route::post('update/{id}',[LocationController::class, 'store'])->name('user_location_store');
+        Route::post('/store',[LocationController::class, 'store'])->name('user_location_store');
+        Route::put('update/{id}',[LocationController::class, 'update'])->name('user_location_update');
         Route::get('delete/{id}',[LocationController::class, 'destroy'])->name('user_location_delete');
     });
+  #rezervation
+    Route::prefix('rezervation')->group(function ()
+    {
+        Route::get('/',[RezervationController::class, 'index'])->name('user_rezervations');
+        Route::post('create',[RezervationController::class, 'create'])->name('user_rezervation_add');
+        Route::post('/store',[RezervationController::class, 'store'])->name('user_rezervation_store');
+        Route::get('edit/{id}',[RezervationController::class, 'edit'])->name('user_rezervation_edit');
+        Route::post('update/{id}',[RezervationController::class, 'update'])->name('user_rezervation_update');
+        Route::get('delete/{id}',[RezervationController::class, 'destroy'])->name('user_rezervation_delete');
+        Route::get('show',[RezervationController::class, 'show'])->name('user_rezervation_show');
+
+    });
+
 });
 
 Route::get('/admin/login',[HomeController::class, 'login'])->name('admin_login');
@@ -171,3 +185,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return redirect()->intended('/');
 //    return view('dashboard');
 })->name('dashboard');
+
