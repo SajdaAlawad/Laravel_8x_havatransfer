@@ -22,7 +22,9 @@
                                 <img src="{{ Storage::url($data->image)}}" style="height:400px" alt="" class="img_inner fleft">
                                 <div class="extra_wrapper" >
                                     <div class="text1 col1">
-                                        <a href="#">{{$data->title}}</a></div>
+                                        <a href="#">{{$data->title}}</a>
+                                        <p> Single KM price : {{ $data->price_km }}</p>
+                                    </div>
                                     <div class="price"><span>{{$data->price_ticket}}</span></div>
                                     <br>
                                     <div>
@@ -50,7 +52,7 @@
 {{--                                    reviews yaninda sayilari gostermek icin--}}
                                     <li class="active"><a data-toggle="tab" href="#">Reviews ({{$countreview}})</a></li>
 
-                                    <a href="{{route('addtocart',['id'=>$data->id])}}" class="link1">Reserve</a>
+                                    <a href="{{route('selected_vechile',['id'=>$data->id])}}" class="link1">Reserve</a>
 
                                 </div>
                             </div>

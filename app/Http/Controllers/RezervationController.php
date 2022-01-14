@@ -30,7 +30,8 @@ class RezervationController extends Controller
      */
     public function create(Request $request)
     {
-         echo $request->input('price');
+         $price = $request->input('price');
+         return view('home.user_order_add',['price'=>$price]);
     }
 
     /**

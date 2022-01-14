@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Location;
+use App\Models\Product;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,8 @@ class LocationController extends Controller
     public function index()
     {
         $setting = Setting::first();
-        return view('home.location', compact('setting'));
+        $products = Product::all();
+        return view('home.location', compact('setting','products'));
     }
 
     /**
@@ -37,8 +39,13 @@ class LocationController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->only('product_id','airport','city','from_location_id','to_location_id','lat_location','long_location', 'status');
-        $response = Location::create($data);
+        $data = $request->only('product_id','from_location','to_location','lat_location','long_location','time','total_price', 'status','long1_location','lat1_location');
+        $data['user_id'] = auth()->user()->id;
+        $number1 = $data['long_location'] - $data['long1_location'];
+        $number2 = $data['lat_location']-$data['lat1_location'];
+        $data['total_price'] = $number1 + $number2;
+         $res = Location::create($data);
+
         return redirect()->route('user_products')->with('success','Location added');
     }
 
@@ -84,5 +91,13 @@ class LocationController extends Controller
     public function destroy(Location $location)
     {
         //
+    }
+
+
+    public function takeVehcile($id)
+    {
+        $vichle = Product::query()->findOrFail($id);
+        $setting = Setting::first();
+        return view('home.selected_vichele', compact('vichle','setting'));
     }
 }

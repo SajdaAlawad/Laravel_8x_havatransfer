@@ -22,16 +22,14 @@
                     <div class="success_wrapper">
                         <div class="success-message">Location has been Selected</div>
                     </div>
+                    <label for="type"> Type:
                     <select name="type" class="form-control form-control-sm">
-                        <option value="vehicle">Vehicle</option>
+                        <option value="airport">Airport</option>
                         <option value="city">City</option>
                     </select>
+                    </label>
                     <label for="product">
-                    <select name="product_id" class="form-control form-control-sm">
-                        @foreach( $products as $pro)
-                            <option value="{{ $pro->id }}"> {{ $pro->title }}</option>
-                        @endforeach
-                    </select>
+                        <input type="hidden" value="{{ $vichle->id }}" name="product_id"/>
                     </label>
 
                     <label class="airport">

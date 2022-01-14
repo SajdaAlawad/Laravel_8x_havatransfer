@@ -35,6 +35,7 @@ Route::get('/references', [HomeController::class, 'references'])->name('referenc
 Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/location', [HomeController::class, 'location'])->name('location');
+Route::get('/rezervation', [HomeController::class, 'rezervation'])->name('rezervation');
 
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
 Route::get('/getproduct', [HomeController::class, 'getproduct'])->name('getproduct');
@@ -186,3 +187,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //    return view('dashboard');
 })->name('dashboard');
 
+Route::get('select-vehcile/{id}', [LocationController::class,'takeVehcile'])->name('selected_vechile');
