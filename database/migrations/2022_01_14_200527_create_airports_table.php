@@ -1,0 +1,38 @@
+<?php
+
+use App\Models\City;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateAirportsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('airports', function (Blueprint $table) {
+            $table->id();
+            $table->foreignIdFor(City::class,'city_id')
+                ->constrained('cities')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->string('name');
+            $table->text('description');
+            $table->integer('lang');
+            $table->integer('lat');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('airports');
+    }
+}

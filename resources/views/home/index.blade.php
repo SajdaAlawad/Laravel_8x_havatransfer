@@ -133,7 +133,7 @@
                         <div class="label">
                             <div class="title">{{$rs->title}}</div>
                             <div class="price">FROM<span>{{$rs->price_ticket}}</span></div>
-                            <a href="{{route('user_location')}}">Reserve</a>
+                            <a href="{{route('product',['id' => $rs->id,'slug' => $rs->slug])}}">Reserve</a>
                         </div>
                     </div>
                 </div>

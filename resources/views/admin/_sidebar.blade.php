@@ -14,14 +14,6 @@
                    Category
                 </p>
             </a>
-        <!-- <div class="collapse" id="ui-basic">
-              <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href=" ">Category Seç</a></li>
-                     <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
-                     <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
-                </ul>
-            </div>  -->
-
         </li>
         <li class="nav-item has-treeview">
             <a href="{{route('admin_products')}}" class="nav-link">
@@ -53,6 +45,22 @@
                 <p>
                     <i class="icon-columns menu-icon">  </i>
                     FAQ
+                </p>
+            </a>
+        </li>
+        <li class="nav-item has-treeview">
+            <a class="nav-link" href="" >
+                <p>
+                    <i class="icon-layout menu-icon"> </i>
+                    City
+                </p>
+            </a>
+        </li>
+        <li class="nav-item has-treeview">
+            <a class="nav-link" href="" >
+                <p>
+                    <i class="icon-layout menu-icon"> </i>
+                    Airport
                 </p>
             </a>
         </li>
