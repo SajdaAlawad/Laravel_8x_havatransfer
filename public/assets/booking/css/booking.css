@@ -385,6 +385,9 @@ textarea::-moz-placeholder
   font-weight: normal;
   float: left;
   padding-top: 7px;
+  padding-bottom: 7px;
+    padding-right: 30px;
+    padding-left: 3px;
 }
 
 
