@@ -22,7 +22,6 @@ class RezervationController extends Controller
         $setting = Setting::first();
         $datalist = Rezervation::where('user_id',Auth::id());
         return view('home.user_rezervationlist',['setting'=>$setting,'datalist'=>$datalist]);
-
         return view('home.user_rezervationlist', compact('setting'));
     }
 

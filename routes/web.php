@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\MessageController;
+use App\Http\Controllers\admin\RezervationlistController;
 use App\Http\Controllers\AirportController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\HomeController;
@@ -71,7 +72,6 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 
     });
 
-
     Route::prefix('messages')->group(function () {
         Route::get('/', [MessageController::class, 'index'])->name('admin_message');
         Route::get('edit/{id}', [MessageController::class, 'edit'])->name('admin_message_edit');
@@ -127,6 +127,17 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('delete/{id}', [\App\Http\Controllers\Admin\FaqController::class, 'destroy'])->name('admin_faq_delete');
         Route::get('show', [\App\Http\Controllers\Admin\FaqController::class, 'show'])->name('admin_faq_show');
 
+    });
+
+    #rezervation
+    Route::prefix('rezervationlist')->group(function () {
+        Route::get('/', [RezervationlistController::class,'index'])->name('admin_rezervationlist');
+        Route::get('create', [RezervationlistController::class, 'create'])->name('admin_rezervationlist_add');
+        Route::post('/store', [RezervationlistController::class, 'store'])->name('admin_rezervationlist_store');
+        Route::get('edit/{id}', [RezervationlistController::class, 'edit'])->name('admin_rezervationlist_edit');
+        Route::post('update/{id}', [RezervationlistController::class, 'update'])->name('admin_rezervationlist_update');
+        Route::get('delete/{id}', [RezervationlistController::class, 'destroy'])->name('admin_rezervationlist_delete');
+        Route::get('show', [RezervationlistController::class, 'show'])->name('admin_rezervationlist_show');
     });
 });
 
