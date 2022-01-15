@@ -20,7 +20,10 @@ class RezervationController extends Controller
     public function index()
     {
         $setting = Setting::first();
-        return view('home.user_rezervation', compact('setting'));
+        $datalist = Rezervation::where('user_id',Auth::id());
+        return view('home.user_rezervationlist',['setting'=>$setting,'datalist'=>$datalist]);
+
+        return view('home.user_rezervationlist', compact('setting'));
     }
 
     /**
@@ -46,7 +49,7 @@ class RezervationController extends Controller
         $data->user_id = Auth::id();
         $data->product_id = $request->input('product_id');
         $data->from_location_id_id = $request->input('from_location_id_id');
-        $data->to_location_id_id = $request->input('to_location_id');
+        $data->to_location_id_id = $request->input('to_location_id_id');
         $data->total_price_id = $request->input('total_price_id');
         $data->airline = $request->input('airline');
         $data->rezervation_no = $request->input('rezervation_no');

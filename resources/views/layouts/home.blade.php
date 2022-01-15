@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="format-detection" content="@yield('format-detection')" />
     <meta name="keywords" content="@yield('keywords')">
-    <meta name="author" content="@yield('author')">
+    <meta name="author" content="Sajedah alavad">
     <meta name="viewport" content="@yield('viewport')">
 
 

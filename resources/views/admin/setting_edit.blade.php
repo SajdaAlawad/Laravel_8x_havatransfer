@@ -64,7 +64,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label >Keyword</label>
-                                                <input type="text" name="keyword" value="{{$data->keyword}}" class="form-control" >
+                                                <input type="text" name="keywords" value="{{$data->keywords}}" class="form-control" >
                                             </div>
                                             <div class="form-group">
                                                 <label >Description</label>

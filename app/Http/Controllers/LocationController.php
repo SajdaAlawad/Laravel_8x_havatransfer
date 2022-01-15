@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\City;
 use App\Models\Location;
 use App\Models\Product;
+use App\Models\Rezervation;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 
@@ -39,14 +41,19 @@ class LocationController extends Controller
      */
     public function store(Request $request)
     {
+/*      $km1 = City::find($data['from_id']);
+        $km2 = City::find($data['to_id']);
+        $number1 = $km1->lan -$km2->lan;
+        $number2 = $km1->lang-$km2->lang;*/
+
         $data = $request->only('product_id','from_location','to_location','lat_location','long_location','time','total_price', 'status','long1_location','lat1_location');
         $data['user_id'] = auth()->user()->id;
+        $km = Product::find($data['product_id']);
         $number1 = $data['long_location'] - $data['long1_location'];
-        $number2 = $data['lat_location']-$data['lat1_location'];
-        $data['total_price'] = $number1 + $number2;
-         $res = Location::create($data);
-
-        return redirect()->route('user_products')->with('success','Location added');
+        $number2= $data['lat_location'] - $data['lat1_location'];
+        $data['total_price'] =$km->price_km* sqrt(($number1)*($number1) + ($number2)*($number2));
+        $res = Location::create($data);
+        return redirect()->route('user_rezervations')->with('success','Location added');
     }
 
     /**

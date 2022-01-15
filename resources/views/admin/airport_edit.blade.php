@@ -35,7 +35,7 @@
 
                             <form role="forms" action="{{route('airport.update',['airport' => $airport->id])}}" method="post" enctype="multipart/form-data">
                                 @csrf
-                                @method('PUT')
+{{--                                @method('PUT')--}}
                                 <div class="form-group">
                                     <label >Name</label>
                                     <input value="{{ $airport->name }}" type="text" name="name" class="form-control" >

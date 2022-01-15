@@ -14,7 +14,7 @@
                <div class="col-sm-6">
                    <ol class="breadcrumb float-sm-right">
                        <li class="breadcrumb-item"><a href="#">home</a>  </li>
-                       <li class="breadcrumb-item"><a href="#">Taxi</a>  </li>
+                       <li class="breadcrumb-item"><a href="#">Airport</a>  </li>
                    </ol>
                </div>
            </div>
@@ -25,7 +25,7 @@
            <div class="card">
                <div class="card-header">
                   <!-- <a href="" type="button" class="btn btn-block btn-info" style="width: 200px">Add Category</a> -->
-                   <a href="{{ route('airport.create') }}" type="button" class="btn btn-inverse-info btn-fw" style="width:200px">Add Airport</a>
+                   <a href="{{ route('admin_airport_create') }}" type="button" class="btn btn-inverse-info btn-fw" style="width:200px">Add Airport</a>
                </div>
                <div class="col-lg-10 stretch-card">
                    <div class="card">
@@ -55,7 +55,7 @@
                                        <td> {{ $rs->lat }}</td>
                                        <td> {{ $rs->status == true ?'True':'False' }}</td>
 
-                                       <td><a href="{{ route('airport.edit',['airport'=>$rs->id]) }}"><img src="{{asset('assets/admin/image')}}/edit.jfif" height="25"></a></td>
+                                       <td><a href="{{ route('admin_airport_edit',['airport'=>$rs->id]) }}"><img src="{{asset('assets/admin/image')}}/edit.jfif" height="25"></a></td>
                                        <td> <a href="{{ route('delete.airport',['airport' => $rs->id]) }}" onclick="return confirm('Delete! are you sure?')"><img src="{{asset('assets/admin/image')}}/delete.png" height="25"></a></td>
                                    </tr>
                                    @endforeach

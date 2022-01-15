@@ -3,36 +3,20 @@
 @section('title', 'My Rezervation')
 @section('content')
 
-    <div class="content-wrapper">
-        <section class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
+    <div class="content1">
+        <div class="container_12">
+            <div class="container">
+                        <ul class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">home</a>  </li>
                             <li class="breadcrumb-item"><a href="#">User Rezervation</a>  </li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="content">
-            <div class="card">
-                <div class=" col-md-2">
-                    <div class="card-header">
+                        </ul>
+             </div>
+                <div class="grid_2">
                     @include('home.usermenu')
-                    </div>
                 </div>
-                <div class="card col-md-10">
-                    <div class="card-header">
-                        <!-- <a href="" type="button" class="btn btn-block btn-info" style="width: 200px">Add Category</a> -->
-                        <a href="{{route('user_product_add')}}" type="button" class="btn btn-inverse-info btn-fw" style="width:200px">Add </a>
-                        @include('home.message')
-                    </div>
+                <div class="grid_10">
+                    <div class="table-responsive ">
                         <div class="card">
-                            <div class="card-body">
-                                <div class="table-responsive ">
                                     <table class="table table-bordered table-striped ">
                                         <thead>
                                         <tr>

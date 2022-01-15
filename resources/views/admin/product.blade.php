@@ -9,12 +9,12 @@
            <div class="container-fluid">
                <div class="row mb-2">
                <div class="col-sm-6">
-                   <h3>Taxi</h3>
+                   <h3>Vehicles</h3>
                </div>
                <div class="col-sm-6">
                    <ol class="breadcrumb float-sm-right">
                        <li class="breadcrumb-item"><a href="#">home</a>  </li>
-                       <li class="breadcrumb-item"><a href="#">Taxi</a>  </li>
+                       <li class="breadcrumb-item"><a href="#">Vehicle</a>  </li>
                    </ol>
                </div>
            </div>
@@ -37,8 +37,8 @@
                                        <th>id</th>
                                        <th>Category</th>
                                        <th>Title </th>
-                                       <th>Type Of Taxi </th>
-                                       <th>Where From</th>
+                                       <th>Type Of Vehicles </th>
+                                       <th>From Where </th>
                                        <th>To Where</th>
                                        <th>Base Price </th>
                                        <th>Km Price </th>

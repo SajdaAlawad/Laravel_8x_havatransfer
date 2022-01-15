@@ -25,7 +25,7 @@
            <div class="card">
                <div class="card-header">
                   <!-- <a href="" type="button" class="btn btn-block btn-info" style="width: 200px">Add Category</a> -->
-                   <a href="{{ route('city.create') }}" type="button" class="btn btn-inverse-info btn-fw" style="width:200px">Add City</a>
+                   <a href="{{ route('admin_city_create') }}" type="button" class="btn btn-inverse-info btn-fw" style="width:200px">Add City</a>
                </div>
                <div class="col-lg-10 stretch-card">
                    <div class="card">
@@ -54,7 +54,7 @@
                                        <td> {{ $rs->lat }}</td>
                                        <td> {{ $rs->status == true ?'True':'False' }}</td>
 
-                                       <td><a href="{{ route('city.edit',['city'=>$rs->id]) }}"><img src="{{asset('assets/admin/image')}}/edit.jfif" height="25"></a></td>
+                                       <td><a href="{{ route('admin_city_edit',['city'=>$rs->id]) }}"><img src="{{asset('assets/admin/image')}}/edit.jfif" height="25"></a></td>
                                        <td> <a href="{{ route('delete.city',['city' => $rs->id]) }}" onclick="return confirm('Delete! are you sure?')"><img src="{{asset('assets/admin/image')}}/delete.png" height="25"></a></td>
                                    </tr>
                                    @endforeach

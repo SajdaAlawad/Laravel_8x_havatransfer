@@ -102,10 +102,20 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('setting', [App\Http\Controllers\Admin\SettingController::class, 'index'])->name('admin_setting');
     Route::post('setting/update', [App\Http\Controllers\Admin\SettingController::class, 'update'])->name('admin_setting_update');
 #city
-    Route::resource('/city', CityController::class);
+//    Route::resource('/city', CityController::class);
+    Route::get('/city', [CityController::class,'index'])->name('admin_city');
+    Route::get('/city/add', [CityController::class,'create'])->name('admin_city_create');
+    Route::post('/city/store', [CityController::class,'store'])->name('admin_city_store');
+    Route::get('/city/{city}/edit', [CityController::class,'edit'])->name('admin_city_edit');
+    Route::post('/city/{city}/update', [CityController::class,'update'])->name('city.update');
     Route::get('/city/{city}/delete',[CityController::class,'delete'])->name('delete.city');
-
-    Route::resource('/airport', AirportController::class);
+#airport
+   // Route::resource('/airport', AirportController::class);
+    Route::get('/airport', [AirportController::class,'index'])->name('admin_airport');
+    Route::get('/airport/add', [AirportController::class,'create'])->name('admin_airport_create');
+    Route::post('/airport/store', [AirportController::class,'store'])->name('admin_airport_store');
+    Route::get('/airport/{airport}/edit', [AirportController::class,'edit'])->name('admin_airport_edit');
+    Route::post('/airport/{airport}/update', [AirportController::class,'update'])->name('airport.update');
     Route::get('/airport/{airport}/delete',[AirportController::class,'delete'])->name('delete.airport');
 #Fags
     Route::prefix('faq')->group(function () {
@@ -131,26 +141,6 @@ Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(fu
 Route::middleware('auth')->prefix('user')->namespace('user')->group(function () {
     Route::get('/profile', [UserController::class, 'index'])->name('userprofile');
 
-#product
-    Route::prefix('product')->group(function () {
-        Route::get('/', [ProductController::class, 'index'])->name('user_products');
-        Route::get('create', [ProductController::class, 'create'])->name('user_product_add');
-        Route::post('store', [ProductController::class, 'store'])->name('user_product_store');
-        Route::get('edit/{id}', [ProductController::class, 'edit'])->name('user_product_edit');
-        Route::post('update/{id}', [ProductController::class, 'update'])->name('user_product_update');
-        Route::get('delete/{id}', [ProductController::class, 'destroy'])->name('user_product_delete');
-        Route::get('show', [ProductController::class, 'show'])->name('user_product_show');
-
-    });
-
-    #Userproduct image galllery
-    Route::prefix('image')->group(function () {
-        Route::get('create/{product_id}', [\App\Http\Controllers\Admin\ImageController::class, 'create'])->name('user_image_add');
-        Route::post('store/{product_id}', [\App\Http\Controllers\Admin\ImageController::class, 'store'])->name('user_image_store');
-        Route::get('delete/{id}/{product_id}', [\App\Http\Controllers\Admin\ImageController::class, 'destroy'])->name('user_image_delete');
-        Route::get('show', [\App\Http\Controllers\Admin\ImageController::class, 'show'])->name('user_image_show');
-
-    });
     #location
     Route::prefix('location')->group(function () {
         Route::get('/', [LocationController::class, 'index'])->name('user_location');
@@ -161,7 +151,7 @@ Route::middleware('auth')->prefix('user')->namespace('user')->group(function () 
     #rezervation
     Route::prefix('rezervation')->group(function () {
         Route::get('/', [RezervationController::class, 'index'])->name('user_rezervations');
-        Route::post('create', [RezervationController::class, 'create'])->name('user_rezervation_add');
+        Route::get('create', [RezervationController::class, 'create'])->name('user_rezervation_add');
         Route::post('/store', [RezervationController::class, 'store'])->name('user_rezervation_store');
         Route::get('edit/{id}', [RezervationController::class, 'edit'])->name('user_rezervation_edit');
         Route::post('update/{id}', [RezervationController::class, 'update'])->name('user_rezervation_update');

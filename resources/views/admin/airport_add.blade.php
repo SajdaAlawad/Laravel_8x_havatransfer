@@ -31,7 +31,7 @@
                     <div class="col-12 grid-margin stretch-card">
                         <div class="card">
 
-                            <form role="forms" action="{{route('airport.store')}}" method="post"
+                            <form role="forms" action="{{route('admin_airport_store')}}" method="post"
                                   enctype="multipart/form-data">
                                 @csrf
 

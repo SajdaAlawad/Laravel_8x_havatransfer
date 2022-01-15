@@ -68,7 +68,6 @@ use App\Http\Controllers\Admin\CategoryController
                                     </select>
                                 </div>
                                 <button type="submit" class="btn btn-primary mr-2">Add Category</button>
-
                             </form>
 
                     </div>

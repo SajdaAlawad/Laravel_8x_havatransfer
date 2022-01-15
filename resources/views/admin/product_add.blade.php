@@ -58,12 +58,12 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label >Type Of Taxi</label>
+                                    <label >Type Of Vehicle</label>
                                     <input type="text" name="Ticket_type" class="form-control" >
                                 </div>
 
                                 <div class="form-group">
-                                    <label >Where From</label>
+                                    <label>From Where </label>
                                     <input type="text" name="from" class="form-control" >
                                 </div>
                                 <div class="form-group">
@@ -71,7 +71,7 @@
                                     <input type="text" name="to" class="form-control" >
                                 </div>
                                 <div class="form-group">
-                                    <label >Base Price </label>
+                                    <label >Base Price</label>
                                     <input type="number" name="price_ticket" value="0" class="form-control" >
                                 </div>
 
@@ -112,9 +112,7 @@
                                     </select>
                                 </div>
                                 <button type="submit" class="btn btn-primary mr-2">Add </button>
-
                             </form>
-
                     </div>
                 </div>
             </div>

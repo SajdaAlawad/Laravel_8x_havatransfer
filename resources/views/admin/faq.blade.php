@@ -78,10 +78,6 @@
 @endsection
 @section('footer')
     <script src="{{asset('assets')}}/admin/vendors/js/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
     <script src="{{asset('assets')}}/admin/js/off-canvas.js"></script>
     <script src="{{asset('assets')}}/admin/js/hoverable-collapse.js"></script>
     <script src="{{asset('assets')}}/admin/js/template.js"></script>

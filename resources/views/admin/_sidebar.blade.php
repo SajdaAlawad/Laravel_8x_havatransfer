@@ -19,7 +19,7 @@
             <a href="{{route('admin_products')}}" class="nav-link">
                 <p>
                     <i class="icon-paper menu-icon">  </i>
-                    Products
+                    Vehicle
                 </p>
             </a>
         </li>
@@ -49,7 +49,7 @@
             </a>
         </li>
         <li class="nav-item has-treeview">
-            <a class="nav-link" href="" >
+            <a class="nav-link" href="{{route('admin_city')}}" >
                 <p>
                     <i class="icon-layout menu-icon"> </i>
                     City
@@ -57,9 +57,9 @@
             </a>
         </li>
         <li class="nav-item has-treeview">
-            <a class="nav-link" href="" >
+            <a class="nav-link" href="{{route('admin_airport')}}" >
                 <p>
-                    <i class="icon-layout menu-icon"> </i>
+                    <i class="icon-layout menu-icon" > </i>
                     Airport
                 </p>
             </a>

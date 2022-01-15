@@ -30,7 +30,7 @@
                                         <th>Name</th> <td> {{ $data->name }}</td>
                                     <tr>
                                     </tr>
-                                        <th>Product </th>   <td>{{ $data->product->title }} </td>
+                                        <th>Vehicle </th>   <td>{{ $data->product->title }} </td>
                                     <tr>
                                     </tr>
                                         <th>Subject</th><td> {{ $data->Subject }}</td>

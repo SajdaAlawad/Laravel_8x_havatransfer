@@ -64,12 +64,12 @@
 
 
                                 <div class="form-group">
-                                    <label >Type Of Taxi</label>
+                                    <label >Type Of Vehicle</label>
                                     <input type="text" name="Ticket_type" value="{{$data->Ticket_type}}" class="form-control" >
                                 </div>
 
                                 <div class="form-group">
-                                    <label >Where From</label>
+                                    <label >From Where</label>
                                     <input type="text" name="from" value="{{$data->from}}" class="form-control" >
                                 </div>
                                 <div class="form-group">
