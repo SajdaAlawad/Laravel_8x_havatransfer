@@ -30,8 +30,8 @@ class RezervationController extends Controller
      */
     public function create(Request $request)
     {
-         $price = $request->input('price');
-         return view('home.user_order_add',['price'=>$price]);
+         $total_price = $request->input('total_price_id');
+         return view('home.user_rezervation',['total_price_id'=>$total_price]);
     }
 
     /**
@@ -67,7 +67,8 @@ class RezervationController extends Controller
      */
     public function show(Rezervation $rezervation)
     {
-        //
+//        $setting = Setting::first();
+//        return view('home.user_rezervationlist', compact('setting'));
     }
 
     /**
