@@ -23,7 +23,11 @@
                         @auth
                             <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Welecome: {{Illuminate\Support\Facades\Auth::user()->name}}</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="index_op_fullscreen_gradient_overlay.html">Profile</a></li>
+                                    <?php $userRoles = Illuminate\Support\Facades\Auth::user()->roles->pluck('name') ?>
+                                    @if($userRoles->contains('admin'))
+                                    <li><a href="{{route('admin_home')}}">Admin Panel </a></li>
+                                    @endif
+
                                     <li><a href="{{ route('myprofile') }}">My Account</a></li>
                                     <li><a href="{{ route('myreviews') }}">My Review</a></li>
                                     <li><a href="{{ route('user_rezervations') }}">My Rezervation</a></li>
@@ -32,7 +36,8 @@
                             </li>
                         @endauth
                         @guest
-                            <li><a href="{{route('login')}}">LOGIN | REGISTER</a></li>
+                            <li><a href="{{route('login')}}">LOGIN</a></li>
+                            <li><a href="{{route('register')}}">REGISTER</a></li>
                         @endguest
                     </ul>
                 </nav>

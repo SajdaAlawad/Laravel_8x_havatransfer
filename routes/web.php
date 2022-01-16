@@ -48,10 +48,12 @@ Route::get('/addtocart/{id}', [HomeController::class, 'addtocart'])->name('addto
 
 
 Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->whereNumber('id')->whereAlpha('name')->name('test');
-// admin
+//admin
 Route::middleware('auth')->prefix('admin')->group(function () {
+        // admin role
+    Route::middleware('admin')->group(function(){
     Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_home');
-
+    #category
     Route::get('category', [App\Http\Controllers\Admin\CategoryController::class, 'index'])->name('admin_category');
     Route::get('category/add', [App\Http\Controllers\Admin\CategoryController::class, 'add'])->name('admin_category_add');
     Route::post('category/create', [App\Http\Controllers\Admin\CategoryController::class, 'create'])->name('admin_category_create');
@@ -139,8 +141,9 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::post('update/{id}', [RezervationlistController::class, 'update'])->name('admin_rezervationlist_update');
         Route::get('delete/{id}', [RezervationlistController::class, 'destroy'])->name('admin_rezervationlist_delete');
         Route::get('show', [RezervationlistController::class, 'show'])->name('admin_rezervationlist_show');
-    });
-});
+     });
+    }); #admin
+}); #auth
 
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function () {
     Route::get('/', [UserController::class, 'index'])->name('myprofile');

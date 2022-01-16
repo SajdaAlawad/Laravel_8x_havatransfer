@@ -31,6 +31,7 @@
                         </div>
                         <h4>Hello! let's get started</h4>
                         <h6 class="font-weight-light">Sign in to continue.</h6>
+                        @include('home.message')
                         <form action="{{ route('admin_logincheck') }}" class="pt-3" method="post">
                             @csrf
                             <div class="form-group">
