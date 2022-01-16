@@ -22,6 +22,11 @@ class RezervationlistController extends Controller
         return view('admin.rezervationlist', ['datalist'=>$datalist]);
     }
 
+    public function list( $status)
+    {
+        $datalist = Rezervation::where('status',$status)->get();
+        return view('admin.rezervationlist',['datalist'=>$datalist]);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -73,9 +78,13 @@ class RezervationlistController extends Controller
      * @param  \App\Models\Rezervationlist  $rezervationlist
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Rezervationlist $rezervationlist)
+    public function update(Request $request, Rezervationlist $rezervationlist,$id)
     {
-        //
+        $data = Rezervationlist::find($id)->get();
+        $data->status =$request->input('status');
+        $data->note   =$request->input('note');
+        $data->save();
+        return redirect()->with('success','Rezervation Updated');
     }
 
     /**

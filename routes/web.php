@@ -132,6 +132,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     #rezervation
     Route::prefix('rezervationlist')->group(function () {
         Route::get('/', [RezervationlistController::class,'index'])->name('admin_rezervationlist');
+        Route::get('list/{status}', [RezervationlistController::class, 'list'])->name('admin_rezervationlist_list');
         Route::get('create', [RezervationlistController::class, 'create'])->name('admin_rezervationlist_add');
         Route::post('/store', [RezervationlistController::class, 'store'])->name('admin_rezervationlist_store');
         Route::get('edit/{id}', [RezervationlistController::class, 'edit'])->name('admin_rezervationlist_edit');
