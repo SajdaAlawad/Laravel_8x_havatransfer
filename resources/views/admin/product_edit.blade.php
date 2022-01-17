@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Add Product ')
+@section('title', 'Edit Product ')
 
 @section('javascript')
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

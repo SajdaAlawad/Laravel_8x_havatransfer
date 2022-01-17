@@ -47,7 +47,11 @@
                                     @foreach($datalist as $rs)
                                         <tr class="table-info">
                                             <td> {{ $rs->id }}</td>
-                                            <td> {{ $rs->user->name }}</td>
+                                            <td>
+                                              <a href="{{route('admin_user_show',['id' =>$rs->user->id])}}" onclick="return !window.open(this.href,'','top=50 left=100 width=800,height=600')">
+                                            {{ $rs->user->name }}
+                                             </a>
+                                            </td>
                                             <td>
                                                 <a href="{{route('product',['id' =>$rs->product->id,'slug'=> $rs->product->slug])}}" target="_blank">
                                                     {{$rs->product->title}}
@@ -58,7 +62,7 @@
                                             <td> {{ $rs->rate }}</td>
                                             <td> {{ $rs->status }}</td>
                                             <td>{{$rs->created_at}}</td>
-                                            <td><a href="{{route('admin_review_show',['id' =>$rs->id])}}"><img src="{{asset('assets/admin/image')}}/edit.jfif" height="25"></a></td>
+                                            <td><a href="{{route('admin_review_show',['id' =>$rs->id])}}" onclick="return !window.open(this.href,'','top=50 left=100 width=800,height=600')"><img src="{{asset('assets/admin/image')}}/edit.jfif" height="25"></a></td>
                                             <td> <a href="{{route('admin_review_delete',['id' =>$rs->id])}}" onclick="return confirm('Delete! are you sure?')"><img src="{{asset('assets/admin/image')}}/delete.png" height="25"></a></td>
                                         </tr>
                                     @endforeach

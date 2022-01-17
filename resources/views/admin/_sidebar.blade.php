@@ -57,14 +57,21 @@
             </a>
         </li>
         <li class="nav-item has-treeview">
-            <a class="nav-link" href="{{route('admin_airport')}}" >
+            <a class="nav-link" href="{{route('admin_location')}}" >
                 <p>
                     <i class="icon-layout menu-icon" > </i>
-                    Airport
+                   Location
                 </p>
             </a>
         </li>
-
+        <li class="nav-item has-treeview">
+            <a class="nav-link" href="{{route('admin_users')}}" >
+                <p>
+                    <i class="icon-head menu-icon" > </i>
+                    Users
+                </p>
+            </a>
+        </li>
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
                 <i class="icon-head menu-icon"></i>

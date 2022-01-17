@@ -6,9 +6,11 @@ use App\Http\Controllers\AirportController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\admin\LocationController as AdminLocationController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RezervationController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Admin\UserController as AdminUserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -103,6 +105,15 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     #setting
     Route::get('setting', [App\Http\Controllers\Admin\SettingController::class, 'index'])->name('admin_setting');
     Route::post('setting/update', [App\Http\Controllers\Admin\SettingController::class, 'update'])->name('admin_setting_update');
+    #location
+      //  Route::resource('/location', AdminLocationController::class);
+        Route::get('/location', [AdminLocationController::class,'index'])->name('admin_location');
+        Route::get('/location/add', [AdminLocationController::class,'create'])->name('admin_location_create');
+        Route::post('/location/store', [AdminLocationController::class,'store'])->name('admin_location_store');
+        Route::get('/location/{location}/edit', [AdminLocationController::class,'edit'])->name('admin_location_edit');
+        Route::post('/location/{location}/update', [AdminLocationController::class,'update'])->name('location.update');
+        Route::get('/location/{location}/delete',[AdminLocationController::class,'delete'])->name('delete.location');
+
 #city
 //    Route::resource('/city', CityController::class);
     Route::get('/city', [CityController::class,'index'])->name('admin_city');
@@ -142,6 +153,20 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('delete/{id}', [RezervationlistController::class, 'destroy'])->name('admin_rezervationlist_delete');
         Route::get('show', [RezervationlistController::class, 'show'])->name('admin_rezervationlist_show');
      });
+  #admin.users
+        Route::prefix('user')->group(function () {
+            Route::get('/', [AdminUserController::class,'index'])->name('admin_users');
+            Route::get('list/{status}', [AdminUserController::class, 'list'])->name('admin_user_list');
+            Route::post('create', [AdminUserController::class, 'create'])->name('admin_user_add');
+            Route::post('/store', [AdminUserController::class, 'store'])->name('admin_user_store');
+            Route::get('edit/{id}', [AdminUserController::class, 'edit'])->name('admin_user_edit');
+            Route::post('update/{id}', [AdminUserController::class, 'update'])->name('admin_user_update');
+            Route::get('delete/{id}', [AdminUserController::class, 'destroy'])->name('admin_user_delete');
+            Route::get('show/{id}', [AdminUserController::class, 'show'])->name('admin_user_show');
+            Route::get('userrole/{id}', [AdminUserController::class, 'user_roles'])->name('admin_user_roles');
+            Route::post('userrolestore/{id}', [AdminUserController::class, 'user_role_store'])->name('admin_user_role_add');
+            Route::get('userroledelete/{userid}/{roleid}', [AdminUserController::class, 'user_role_delete'])->name('admin_user_role_delete');
+        });
     }); #admin
 }); #auth
 
@@ -187,4 +212,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //    return view('dashboard');
 })->name('dashboard');
 
-Route::get('select-vehcile/{id}', [LocationController::class, 'takeVehcile'])->name('selected_vechile');
+Route::get('select-vehcile/{id}/C2A', [RezervationController::class, 'C2A'])->name('C2A');
+Route::get('select-vehcile/{id}/A2C', [RezervationController::class, 'A2C'])->name('A2C');
+Route::get('/product/fromto/{id}/potaites/yes', [RezervationController::class, 'fromto'])->name('fromto');

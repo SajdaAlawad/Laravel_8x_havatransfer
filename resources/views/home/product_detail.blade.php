@@ -52,7 +52,7 @@
 {{--                                    reviews yaninda sayilari gostermek icin--}}
                                     <li class="active"><a data-toggle="tab" href="#">Reviews ({{$countreview}})</a></li>
 
-                                    <a href="{{route('selected_vechile',['id'=>$data->id])}}" class="link1">Reserve</a>
+                                    <a href="{{route('fromto',['id'=>$data->id])}}" class="link1">Reserve</a>
 
                                 </div>
                             </div>

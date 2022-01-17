@@ -19,6 +19,7 @@
                 </div>
             </li>
         </ul>
+        @include('home.message')
         <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item dropdown">
                 <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
@@ -70,8 +71,10 @@
             </li>
             <li class="nav-item nav-profile dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-                    <img src="{{asset('assets')}}/admin/images/faces/face28.jpg" alt="profile"/>
-                </a>
+                    @if(Auth::user()->profile_photo_path)
+                        <img src="{{Storage::url(Auth::user()->profile_photo_path)}}" class="img-circle elevation-2" height="50" style="border-radius: 10px" alt="">
+                    @endif
+              </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
 
                    <!-- <a class="dropdown-item">

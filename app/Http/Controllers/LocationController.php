@@ -52,6 +52,7 @@ class LocationController extends Controller
         $number1 = $data['long_location'] - $data['long1_location'];
         $number2= $data['lat_location'] - $data['lat1_location'];
         $data['total_price'] =$km->price_km* sqrt(($number1)*($number1) + ($number2)*($number2));
+        dd($data);
         $res = Location::create($data);
         return redirect()->route('user_rezervations')->with('success','Location added');
     }

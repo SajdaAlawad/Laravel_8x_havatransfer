@@ -33,7 +33,6 @@
                         @endforeach
                     </select>
                     </label>
-
                     <label class="airport">
                         <input type="text" name="airport" placeholder="Airport:"
                                data-constraints="@Required @Email"/>

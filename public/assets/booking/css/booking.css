@@ -405,7 +405,7 @@ textarea::-moz-placeholder
 .tmDatepicker:after {
   content: '\f073';
   position: absolute;
-  bottom: 5px;
+  bottom: 20px;
   right: 23px;
   font: normal normal 20px/20px 'FontAwesome';
   color: #98a6b3;
