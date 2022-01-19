@@ -40,7 +40,7 @@
                                                     <tr>
                                                         <td>{{$row->name}}</td>
                                                         <td>
-                                                            <a href="{{route('admin_user_role_delete',['userid'=> $data->id,'roleid'=>$row->id])}}" onclick="return confirm('Delete! are you sure?')"></a>
+                                                            <a href="{{route('admin_user_role_delete',['userid'=> $data->id,'roleid'=>$row->id])}}" onclick="return confirm('Delete! are you sure?')"><img src="{{asset('assets/admin/image')}}/delete.png" height="25"></a>
                                                         </td>
                                                     </tr>
                                                 @endforeach
@@ -63,12 +63,12 @@
                                     </tr>
 
                                     <tr>
-                                        <td></td>
-                                        <td>
-                                        <div class="card-footer">
-                                            <button type="submit" class="btn btn-primary mr-2">Update Message </button>
-                                        </div>
-                                        </td>
+{{--                                        <td></td>--}}
+{{--                                        <td>--}}
+{{--                                        <div class="card-footer">--}}
+{{--                                            <button type="submit" class="btn btn-primary mr-2">Update</button>--}}
+{{--                                        </div>--}}
+{{--                                        </td>--}}
                                     </tr>
 
                                 </table>

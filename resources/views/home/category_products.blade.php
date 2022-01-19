@@ -7,8 +7,7 @@
 <div class="breadcrumb">
     <div class="container">
         <ul class="breadcrumb">
-            <li><a href="{{route('home')}}">Home</a></li>
-            <li><a href="{{route('home')}}">Vehicle List</a></li>
+            <li><a href="{{route('home')}}">Home</a> / <a href="{{route('home')}}">Vehicle List</a></li>
             <li class="active">{{ \App\Http\Controllers\admin\CategoryController::getParentsTree($data, $data->title) }} </li>
         </ul>
     </div>

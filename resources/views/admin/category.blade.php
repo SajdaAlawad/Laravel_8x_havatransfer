@@ -11,12 +11,12 @@
                <div class="col-sm-6">
                    <h3>Categories</h3>
                </div>
-               <div class="col-sm-6">
-                   <ol class="breadcrumb float-sm-right">
-                       <li class="breadcrumb-item"><a href="#">home</a>  </li>
-                       <li class="breadcrumb-item"><a href="#">Category</a>  </li>
-                   </ol>
-               </div>
+                   <div class="col-md-6">
+                       <ol class="breadcrumb float-sm-right">
+                           <li class="breadcrumb-item"><a href="{{route('admin_home')}}">home</a>  </li>
+                           <li class="breadcrumb-item"><a href="{{route('admin_category')}}">Category</a>  </li>
+                       </ol>
+                   </div>
            </div>
         </div>
        </section>
@@ -24,15 +24,11 @@
        <section class="content">
            <div class="card">
                <div class="card-header">
-                  <!-- <a href="" type="button" class="btn btn-block btn-info" style="width: 200px">Add Category</a> -->
                    <a href="{{route('admin_category_add')}}" type="button" class="btn btn-inverse-info btn-fw" style="width:200px">Add Category</a>
                </div>
-
-
                <div class="col-lg-12 stretch-card">
                    <div class="card">
                        <div class="card-body">
-
                            <div class="table-responsive pt-3">
                                <table class="table table-bordered">
                                    <thead>

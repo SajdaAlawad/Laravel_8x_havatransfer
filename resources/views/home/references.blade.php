@@ -3,7 +3,16 @@
 @section('title', 'References -' .$setting->title)
 @section('description'){{$setting->description}} @endsection
 @section('keywords',$setting->keywords)
+@section('css')
+    <style>
+        img
+        {
+            width: initial;
 
+        }
+
+    </style>
+@endsection
 @section('content')
     <div id="breadcrumb">
         <div class="container">
@@ -13,11 +22,13 @@
             </ul>
         </div>
     </div>
-    <div class="content1">
-        <div class="container_12">
-            <div class="grid_12">
-                <div class="grid_4">
-                    {!! $setting->references !!}
+    <div class="section">
+        <div class="container">
+            <div class="content">
+                <div class="container_12">
+
+                            {!! $setting->references !!}
+
                 </div>
             </div>
         </div>

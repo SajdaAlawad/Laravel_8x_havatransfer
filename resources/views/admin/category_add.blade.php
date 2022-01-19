@@ -18,7 +18,7 @@ use App\Http\Controllers\Admin\CategoryController
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{route('home')}}">home</a>  </li>
-                            <li class="breadcrumb-item"><a href="#">Add category</a>  </li>
+                            <li class="breadcrumb-item"><a href="{{route('admin_category_add')}}">Add category</a>  </li>
                         </ol>
                     </div>
                 </div>

@@ -14,7 +14,6 @@
     <section class="content">
         <div class="card">
             <div class="card-body">
-{{--                <h3>Message Details</h3>--}}
                 @include('home.message')
                 <div class="col-12 grid-margin stretch-card">
                     <div class="card">
@@ -40,14 +39,14 @@
                                         <th>Phone</th><td> {{ $data->phone }}</td>
                                     <tr>
                                     </tr>
-                                        <th>Product</th><td> {{ $data->product_id }}</td>
+                                        <th>Product</th><td> {{ $data->product->title }}</td>
                                     <tr>
                                     </tr>
-                                    <th>From Where</th><td> {{ $data->from_location_id_id }}</td>
+                                    <th>From Where</th><td> {{ $data->from_location_id->name }}</td>
                                     <tr>
 
                                     </tr>
-                                    <th>To Where</th><td> {{ $data->to_location_id_id }}</td>
+                                    <th>To Where</th><td> {{ $data->to_location_id->name }}</td>
                                     <tr>
                                     </tr>
                                     <th>Total Price</th><td> {{ $data->total_price_id }}</td>
@@ -59,10 +58,7 @@
                                     <th>Rezervation No</th><td> {{ $data->rezervation_no }}</td>
                                     <tr>
                                     </tr>
-                                    <th>Rezervation Date</th><td> {{ $data->rezervation_date }}</td>
-                                    <tr>
-                                    </tr>
-                                    <th>Rezervation Time</th><td> {{ $data->rezervation_time }}</td>
+                                    <th>Rezervation Date&Time</th><td> {{ $data->rezervation_date }}</td>
                                     <tr>
                                     </tr>
                                     <th>Pickup Time</th><td> {{ $data->pickup_time }}</td>
@@ -84,7 +80,6 @@
                                                 <option selected>{{$data->status}}</option>
                                                 <option>Accepted</option>
                                                 <option>Canceled</option>
-                                                <option>Shipping</option>
                                                 <option>Completed</option>
                                             </select>
                                         </td>

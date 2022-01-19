@@ -11,10 +11,10 @@
                <div class="col-sm-6">
                    <h3>Messages</h3>
                </div>
-               <div class="col-sm-6">
+               <div class="col-sm-4">
                    <ol class="breadcrumb float-sm-right">
-                       <li class="breadcrumb-item"><a href="#">home</a>  </li>
-                       <li class="breadcrumb-item"><a href="#">Messages</a>  </li>
+                       <li class="breadcrumb-item"><a href="{{route('admin_home')}}">home</a>  </li>
+                       <li class="breadcrumb-item"><a href="{{route('admin_message')}}">Messages</a>  </li>
                    </ol>
                </div>
            </div>

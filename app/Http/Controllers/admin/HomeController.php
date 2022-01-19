@@ -17,10 +17,10 @@ class HomeController extends Controller
     public function index()
     {
 
-       $allreservation = Rezervation ::all();
+       $allreservation = Rezervation::all();
        $categories = Category::all();
        $vehicle = Product::all();
-        return view('admin.index',['categories'=>$categories,'allezervation'=>$allreservation,'vehicle'=>$vehicle]);
+        return view('admin.index',['categories'=>$categories,'allreservation'=>$allreservation,'vehicle'=>$vehicle]);
 
     }
 

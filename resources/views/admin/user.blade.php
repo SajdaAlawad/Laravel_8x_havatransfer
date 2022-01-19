@@ -11,10 +11,10 @@
                <div class="col-sm-6">
                    <h3>Users</h3>
                </div>
-               <div class="col-sm-6">
+               <div class="col-sm-4">
                    <ol class="breadcrumb float-sm-right">
-                       <li class="breadcrumb-item"><a href="#">home</a>  </li>
-                       <li class="breadcrumb-item"><a href="#">Users</a>  </li>
+                       <li class="breadcrumb-item"><a href="{{route('admin_home')}}">home</a>  </li>
+                       <li class="breadcrumb-item"><a href="{{route('admin_users')}}">Users</a>  </li>
                    </ol>
                </div>
            </div>
@@ -31,7 +31,7 @@
                                    <thead>
                                    <tr>
                                        <th>id</th>
-                                       <th></th>
+                                       <th>Image</th>
                                        <th>Name </th>
                                        <th>Email </th>
                                        <th>Phone</th>
@@ -59,7 +59,9 @@
                                                  {{$row->name}},
                                              @endforeach
                                              <a href="{{route('admin_user_roles',['id'=>$rs->id])}}" onclick="return !window.open(this.href,'','top=100 left=300 width=800, height=600')">
-                                                 <i class="nav-icon fas fa-plus-circle"></i>
+                                                 <i class="nav-icon fas fa-plus-circle" >
+                                                     <img src="{{asset('assets/admin/image')}}/plus.png" height="3" >
+                                                 </i>
                                              </a>
                                          </td>
                                        <td><a href="{{route('admin_user_edit',['id' =>$rs->id])}}"><img src="{{asset('assets/admin/image')}}/edit.jfif" height="25"></a></td>

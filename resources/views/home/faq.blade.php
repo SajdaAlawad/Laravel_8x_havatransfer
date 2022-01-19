@@ -19,7 +19,7 @@
 <div class="breadcrumb">
     <div class="container">
         <ul class="breadcrumb">
-            <li class="active"><a href="{{route('home')}}">Home</a> / Frequently Asked Question List</li>
+            <li><a href="{{route('home')}}">Home</a> / <a href="{{route('faq')}}">Frequently Asked Question List</a></li>
         </ul>
     </div>
 </div>

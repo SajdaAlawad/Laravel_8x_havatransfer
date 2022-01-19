@@ -92,11 +92,9 @@ class RezervationController extends Controller
         $data->product_id = $request->input('product_id');
         $data->from_location_id_id = $request->input('from_location_id_id');
         $data->to_location_id_id = $request->input('to_location_id_id');
-      //  $data->total_price_id = $request->input('total_price_id');
         $data->airline = $request->input('airline');
         $data->rezervation_no = $request->input('rezervation_no');
         $data->rezervation_date = $request->input('rezervation_date');
-        $data->rezervation_time = $request->input('rezervation_time');
         $data->pickup_time= $request->input('pickup_time');
         $data->note = $request->input('note');
         $data->IP = $this->getIp();

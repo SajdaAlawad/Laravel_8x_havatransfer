@@ -13,25 +13,25 @@
                </div>
                <div class="col-sm-6">
                    <ol class="breadcrumb float-sm-right">
-                       <li class="breadcrumb-item"><a href="#">home</a>  </li>
-                       <li class="breadcrumb-item"><a href="#">Location</a>  </li>
+                       <li class="breadcrumb-item"><a href={{route('admin_home')}}">home</a>  </li>
+                       <li class="breadcrumb-item"><a href="{{route('admin_location')}}">Location</a>  </li>
                    </ol>
                </div>
            </div>
         </div>
        </section>
 
+
        <section class="content">
            <div class="card">
                <div class="card-header">
-                  <!-- <a href="" type="button" class="btn btn-block btn-info" style="width: 200px">Add Category</a> -->
                    <a href="{{ route('admin_location_create') }}" type="button" class="btn btn-inverse-info btn-fw" style="width:200px">Add Location</a>
                </div>
-               <div class="col-lg-10 stretch-card">
+               <div class="col-lg-12 stretch-card">
                    <div class="card">
                        <div class="card-body">
-                           <div class="table-responsive ">
-                               <table class="table table-bordered table-striped ">
+                           <div class="table-responsive pt-3 ">
+                               <table class="table table-bordered">
                                    <thead>
                                    <tr>
                                        <th>id</th>

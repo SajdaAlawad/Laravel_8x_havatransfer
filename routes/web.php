@@ -40,7 +40,6 @@ Route::get('/references', [HomeController::class, 'references'])->name('referenc
 Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/location', [HomeController::class, 'location'])->name('location');
-//Route::get('/rezervation', [HomeController::class, 'rezervation'])->name('rezervation');
 
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
 Route::get('/getproduct', [HomeController::class, 'getproduct'])->name('getproduct');
@@ -113,23 +112,6 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('/location/{location}/edit', [AdminLocationController::class,'edit'])->name('admin_location_edit');
         Route::post('/location/{location}/update', [AdminLocationController::class,'update'])->name('location.update');
         Route::get('/location/{location}/delete',[AdminLocationController::class,'delete'])->name('delete.location');
-
-#city
-//    Route::resource('/city', CityController::class);
-    Route::get('/city', [CityController::class,'index'])->name('admin_city');
-    Route::get('/city/add', [CityController::class,'create'])->name('admin_city_create');
-    Route::post('/city/store', [CityController::class,'store'])->name('admin_city_store');
-    Route::get('/city/{city}/edit', [CityController::class,'edit'])->name('admin_city_edit');
-    Route::post('/city/{city}/update', [CityController::class,'update'])->name('city.update');
-    Route::get('/city/{city}/delete',[CityController::class,'delete'])->name('delete.city');
-#airport
-   // Route::resource('/airport', AirportController::class);
-    Route::get('/airport', [AirportController::class,'index'])->name('admin_airport');
-    Route::get('/airport/add', [AirportController::class,'create'])->name('admin_airport_create');
-    Route::post('/airport/store', [AirportController::class,'store'])->name('admin_airport_store');
-    Route::get('/airport/{airport}/edit', [AirportController::class,'edit'])->name('admin_airport_edit');
-    Route::post('/airport/{airport}/update', [AirportController::class,'update'])->name('airport.update');
-    Route::get('/airport/{airport}/delete',[AirportController::class,'delete'])->name('delete.airport');
 #Fags
     Route::prefix('faq')->group(function () {
         Route::get('/', [\App\Http\Controllers\Admin\FaqController::class, 'index'])->name('admin_faq');
@@ -142,7 +124,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 
     });
 
-    #rezervation
+    #reservation
     Route::prefix('rezervationlist')->group(function () {
         Route::get('/', [RezervationlistController::class,'index'])->name('admin_rezervationlist');
         Route::get('list/{status}', [RezervationlistController::class, 'list'])->name('admin_rezervationlist_list');
@@ -188,7 +170,7 @@ Route::middleware('auth')->prefix('user')->namespace('user')->group(function () 
         Route::put('update/{id}', [LocationController::class, 'update'])->name('user_location_update');
         Route::get('delete/{id}', [LocationController::class, 'destroy'])->name('user_location_delete');
     });
-    #rezervation
+    #reservation
 
     Route::prefix('rezervation')->group(function () {
         Route::get('/', [RezervationController::class, 'index'])->name('user_rezervations');

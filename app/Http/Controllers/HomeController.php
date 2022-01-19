@@ -59,7 +59,6 @@ class HomeController extends Controller
         $data = Product::find($id);
         $datalist = Image::where('product_id',$id)->get();
         $reviews = Review::where('product_id',$id)->get();
-
         #print_r($data);
         #exit();
         return view('home.product_detail',['data'=>$data,'datalist'=>$datalist,'reviews'=>$reviews]);
@@ -171,14 +170,6 @@ class HomeController extends Controller
        $data['id']=$id;
        $data['name'] =$name;
        return view('home.test',$data);
-      #return view('home.test',['id'=> $id,'name' =>$name]);
-
-      # echo "Id Number : ", $id;
-      # echo "<br>Name : ", $name;
-      # for($i=1 ; $i<=$id ; $i++)
-      # {
-      #     echo "<br> $i - $name";
-      # }
 
    }
 }

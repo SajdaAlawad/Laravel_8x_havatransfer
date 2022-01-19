@@ -13,8 +13,8 @@
                </div>
                <div class="col-sm-6">
                    <ol class="breadcrumb float-sm-right">
-                       <li class="breadcrumb-item"><a href="#">home</a>  </li>
-                       <li class="breadcrumb-item"><a href="#">Frequently Asked Question List</a>  </li>
+                       <li class="breadcrumb-item"><a href="{{route('admin_home')}}">home</a>  </li>
+                       <li class="breadcrumb-item"><a href="{{route('admin_faq')}}">Frequently Asked Question List</a>  </li>
                    </ol>
                </div>
            </div>

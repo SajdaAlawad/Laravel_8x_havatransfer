@@ -8,8 +8,7 @@
     <div id="breadcrumb">
         <div class="container">
             <ul class="breadcrumb">
-                <li><a href="{{route('home')}}">Home</a> / <a href="#">About Us</a></li>
-
+                <li><a href="{{route('home')}}">Home</a> / <a href="{{route('aboutus')}}">About Us</a></li>
             </ul>
         </div>
     </div>

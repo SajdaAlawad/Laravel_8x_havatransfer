@@ -6,8 +6,7 @@
 <div class="breadcrumb">
     <div class="container">
         <ul class="breadcrumb">
-            <li><a href="{{route('home')}}">Home </a></li>/
-            <li><a href="{{route('user_rezervations')}}">Reservation </a></li>
+            <li><a href="{{route('home')}}">Home</a>/<a href="{{route('user_rezervations')}}">Reservation</a></li>
         </ul>
     </div>
 </div>
@@ -91,16 +90,11 @@
 
 
                 <div class="clear"></div>
-                <strong>Reservation Date</strong>
+                <strong>Reservation Date&Time</strong>
                 <label class="rezervation_date">
                     <input type="datetime-local" class="rezervation_date" name="rezervation_date" placeHolder='10/05/2022' data-constraints="@NotEmpty @Required @Date">
                 </label>
 
-                <div class="clear"></div>
-                <strong>Rezervation Time</strong>
-                <label class="rezervation_time">
-                    <input type="time" name="rezervation_time" min="01:00" max="23:00" step="900">
-                </label>
                 <div class="clear"></div>
                 <strong>Pickup Time</strong>
                 <label class="pickup_time">

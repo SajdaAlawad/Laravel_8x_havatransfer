@@ -11,10 +11,9 @@
 
             display: contents;
         }
-        .a{
-            color: #212529;
+        .banner {
+            display: contents;
         }
-
 </style>
 @endsection
 @section('content')
@@ -31,42 +30,47 @@
                     <div class="container_12">
                     <div class="container">
                         <div class="grid_6">
-                            <h3>Product Details</h3>
+                            <h3>Vehicle Details</h3>
                             <div class="block2">
                                 <img src="{{ Storage::url($data->image)}}" style="height:400px" alt="" class="img_inner fleft">
                             </div>
-                            <div class="row">
+                            <div class="">
                                 @foreach($datalist as $rs)
-                                    <div class="single-reviews">
+                                    <div class="banner">
                                         <img src="{{ Storage::url($rs->image)}}" style="width:130px;height:100px;" >
+{{--                                        <a href="{{route('product',['id' => $rs->id,'slug' => $rs->slug])}}">Learn more</a>--}}
                                     </div>
                                 @endforeach
                             </div>
-                            <div class="product-reviews">
-                                @php
-                                $countreview=\App\Http\controllers\HomeController::countreview($data->id);
-                                @endphp
-                                <a>Reviews ({{$countreview}})</a>
+                            <div class="">
+                                <div class="product-reviews">
+                                    @php
+                                        $countreview=\App\Http\controllers\HomeController::countreview($data->id);
+                                    @endphp
+                                    <a>Reviews ({{$countreview}})</a>
 
-                                @foreach($reviews as $rs)
-                                    <div class="single-reviews">
-                                        <div class="review-heading">
-                                            <div><a href="#"><i class="fa fa-user-o"></i>{{$rs->user->name}}</a></div>
-                                            <div class="a"><a  href="#"><i class="fa fa-clock-o"></i>{{$rs->created_at}}</a></div>
-                                            <div class="review-rating pull-right">
-                                                <i class=" @if($rs->rate<1) fa fa-star-o  @else fa fa-star @endif"></i>
-                                                <i class=" @if($rs->rate<2)  fa fa-star-o  @else fa fa-star @endif"></i>
-                                                <i class=" @if($rs->rate<4) fa fa-star-o @else fa fa-star @endif"></i>
-                                                <i class=" @if($rs->rate<5) fa fa-star-o @else fa fa-star @endif"></i>
+                                    @foreach($reviews as $rs)
+                                        <div class="single-reviews">
+                                            <div class="review-heading">
+                                                <div><a href="#"><i class="fa fa-user-o"></i>{{$rs->user->name}}</a></div>
+                                                <div class="a"><a  href="#"><i class="fa fa-clock-o"></i>{{$rs->created_at}}</a></div>
+                                                <div class="review-rating pull-right">
+                                                    <i class=" @if($rs->rate<1) fa fa-star-o  @else fa fa-star @endif"></i>
+                                                    <i class=" @if($rs->rate<2) fa fa-star-o  @else fa fa-star @endif"></i>
+                                                    <i class=" @if($rs->rate<3) fa fa-star-o @else fa fa-star @endif"></i>
+                                                    <i class=" @if($rs->rate<4) fa fa-star-o @else fa fa-star @endif"></i>
+                                                    <i class=" @if($rs->rate<5) fa fa-star-o @else fa fa-star @endif"></i>
+                                                </div>
+                                            </div>
+                                            <div class="review-body">
+                                                <strong>{{$rs->subject}}</strong>
+                                                <p>{{$rs->review}}</p>
                                             </div>
                                         </div>
-                                        <div class="review-body">
-                                            <strong>{{$rs->subject}}</strong>
-                                            <p>{{$rs->review}}</p>
-                                        </div>
-                                    </div>
-                                @endforeach
+                                    @endforeach
+                                </div>
                             </div>
+
                         </div>
                         <div class="grid_4">
                                 <div class="extra_wrapper" >

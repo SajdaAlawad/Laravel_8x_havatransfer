@@ -11,10 +11,10 @@
                <div class="col-sm-6">
                    <h3>Vehicles</h3>
                </div>
-               <div class="col-sm-6">
+               <div class="col-sm-4">
                    <ol class="breadcrumb float-sm-right">
-                       <li class="breadcrumb-item"><a href="#">home</a>  </li>
-                       <li class="breadcrumb-item"><a href="#">Vehicle</a>  </li>
+                       <li class="breadcrumb-item"><a href="{{route('admin_home')}}">home</a>  </li>
+                       <li class="breadcrumb-item"><a href="{{route('admin_products')}}">Vehicle</a>  </li>
                    </ol>
                </div>
            </div>
@@ -24,7 +24,6 @@
        <section class="content">
            <div class="card">
                <div class="card-header">
-                  <!-- <a href="" type="button" class="btn btn-block btn-info" style="width: 200px">Add Category</a> -->
                    <a href="{{route('admin_product_add')}}" type="button" class="btn btn-inverse-info btn-fw" style="width:200px">Add Vehicle</a>
                </div>
                <div class="col-lg-10 stretch-card">

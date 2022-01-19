@@ -86,8 +86,6 @@ class RezervationlistController extends Controller
         $data->note   =$request->input('note');
         $data->save();
         return redirect()->back()->with('success','Changed Rezervation status successfully!');
-
-        //return route('admin_rezervationlist')->with('success','Rezervation Updated');
     }
 
     /**

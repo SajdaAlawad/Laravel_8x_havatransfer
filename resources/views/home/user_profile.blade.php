@@ -4,13 +4,16 @@
 
 
 @section('content')
-    <div class="content1">
+    <div id="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb">
+             <li><a href="{{route('home')}}">Home</a> / <a href="{{route('myprofile')}}">User Profile</a></li>
+
+            </ul>
+        </div>
+    </div>
+   <div class="content1">
         <div class="container_12">
-                <div class="container">
-                    <ul>
-                    <li><a href="{{route('home')}}">Home</a> / <a href="{{route('myprofile')}}">About Us</a></li>
-                    </ul>
-                </div>
             <div class="grid_2">
                 <h3>User Panel</h3>
                 <div class="">

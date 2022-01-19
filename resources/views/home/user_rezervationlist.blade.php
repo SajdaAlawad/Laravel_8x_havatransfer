@@ -6,10 +6,9 @@
     <div class="content1">
         <div class="container_12">
             <div class="container">
-                        <ul class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="{{route('home')}}">home</a></li>
-                            <li class="breadcrumb-item"><a href="{{route('user_rezervations')}}">User Reservation</a>  </li>
-                        </ul>
+                <ul class="breadcrumb">
+                    <li ><a href="{{route('home')}}">home</a> /<a href="{{route('user_rezervations')}}">User Reservation</a></li>
+               </ul>
              </div>
                 <div class="grid_3">
                     @include('home.usermenu')
@@ -29,8 +28,7 @@
                                             <th>From Where</th>
                                             <th>To Where </th>
                                             <th>Reservation No</th>
-                                            <th>Reservation Date</th>
-                                            <th>Reservation Time</th>
+                                            <th>Reservation Date&Time</th>
                                             <th>Total</th>
                                             <th>Status</th>
                                         </tr>
@@ -43,13 +41,12 @@
                                                 <td> {{ $rs->name }}</td>
                                                 <td>{{ $rs->email }} </td>
                                                 <td> {{ $rs->phone }}</td>
-                                                <td> {{ $rs->product_id }}</td>
+                                                <td> {{ $rs->product->title }}</td>
                                                 <td> {{ $rs->airline }}</td>
-                                                <td> {{ $rs->from_location_id_id }}</td>
-                                                <td> {{$rs->to_location_id_id}}</td>
+                                                <td> {{ $rs->from_location_id->name }}</td>
+                                                <td> {{$rs->to_location_id->name}}</td>
                                                 <td>{{$rs->rezervation_no}}</td>
                                                 <td>{{$rs->rezervation_date}}</td>
-                                                <td>{{$rs->rezervation_time}}</td>
                                                 <td>{{$rs->total_price_id}}</td>
                                                 <td> {{ $rs->status }}</td>
                                             </tr>
@@ -73,10 +70,6 @@
 @endsection
 @section('footer')
     <script src="{{asset('assets')}}/admin/vendors/js/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
     <script src="{{asset('assets')}}/admin/js/off-canvas.js"></script>
     <script src="{{asset('assets')}}/admin/js/hoverable-collapse.js"></script>
     <script src="{{asset('assets')}}/admin/js/template.js"></script>

@@ -49,26 +49,10 @@
             </a>
         </li>
         <li class="nav-item has-treeview">
-            <a class="nav-link" href="{{route('admin_city')}}" >
-                <p>
-                    <i class="icon-layout menu-icon"> </i>
-                    City
-                </p>
-            </a>
-        </li>
-        <li class="nav-item has-treeview">
             <a class="nav-link" href="{{route('admin_location')}}" >
                 <p>
                     <i class="icon-layout menu-icon" > </i>
                    Location
-                </p>
-            </a>
-        </li>
-        <li class="nav-item has-treeview">
-            <a class="nav-link" href="{{route('admin_users')}}" >
-                <p>
-                    <i class="icon-head menu-icon" > </i>
-                    Users
                 </p>
             </a>
         </li>
@@ -83,11 +67,18 @@
                     <li class="nav-item"> <a class="nav-link" href="{{route('admin_rezervationlist_list',['status'=>'new'])}}"> New Rezervation </a></li>
                     <li class="nav-item"> <a class="nav-link" href="{{route('admin_rezervationlist_list',['status'=>'accepted'])}}"> Accepted Rezervation </a></li>
                     <li class="nav-item"> <a class="nav-link" href="{{route('admin_rezervationlist_list',['status'=>'canceled'])}}"> Cenceled Rezervation </a></li>
-                    <li class="nav-item"> <a class="nav-link" href="{{route('admin_rezervationlist_list',['status'=>'shipping'])}}"> Shipping Rezervation </a></li>
                     <li class="nav-item"> <a class="nav-link" href="{{route('admin_rezervationlist_list',['status'=>'completed'])}}"> Completed Rezervation </a></li>
 
                 </ul>
             </div>
+        </li>
+        <li class="nav-item has-treeview">
+            <a class="nav-link" href="{{route('admin_users')}}" >
+                <p>
+                    <i class="icon-head menu-icon" > </i>
+                    Users
+                </p>
+            </a>
         </li>
 
 

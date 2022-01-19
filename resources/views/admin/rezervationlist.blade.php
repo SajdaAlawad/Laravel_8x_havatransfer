@@ -11,10 +11,10 @@
                     <div class="col-sm-6">
                         <h3>Rezervation</h3>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">home</a>  </li>
-                            <li class="breadcrumb-item"><a href="#">Rezervation List</a>  </li>
+                            <li class="breadcrumb-item"><a href="{{route('admin_home')}}">home</a>  </li>
+                            <li class="breadcrumb-item"><a href="{{route('admin_rezervationlist')}}">Rezervation List</a>  </li>
                         </ol>
                     </div>
                 </div>
@@ -43,8 +43,7 @@
                                         <th>From Where</th>
                                         <th>To Where </th>
                                         <th>Rezervation No</th>
-                                        <th>Rezervation Date</th>
-                                        <th>Rezervation Time</th>
+                                        <th>Rezervation Date&Time</th>
                                         <th>Total</th>
                                         <th>Status</th>
                                         <th style="..." colspan="2">Actions</th>
@@ -63,13 +62,12 @@
                                             <td> {{ $rs->name }}</td>
                                             <td>{{ $rs->email }} </td>
                                             <td> {{ $rs->phone }}</td>
-                                            <td> {{ $rs->product_id }}</td>
+                                            <td> {{ $rs->product->title}}</td>
                                             <td> {{ $rs->airline }}</td>
-                                            <td> {{ $rs->from_location_id_id }}</td>
-                                            <td> {{$rs->to_location_id_id}}</td>
+                                            <td> {{ $rs->from_location_id->name }}</td>
+                                            <td> {{$rs->to_location_id->name}}</td>
                                             <td>{{$rs->rezervation_no}}</td>
                                             <td>{{$rs->rezervation_date}}</td>
-                                            <td>{{$rs->rezervation_time}}</td>
                                             <td>{{$rs->total_price_id}}</td>
                                             <td> {{ $rs->status }}</td>
                                             <td>

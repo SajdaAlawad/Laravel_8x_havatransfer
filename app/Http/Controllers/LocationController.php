@@ -41,30 +41,17 @@ class LocationController extends Controller
      */
     public function store(Request $request)
     {
-/*      $km1 = City::find($data['from_id']);
-        $km2 = City::find($data['to_id']);
-        $number1 = $km1->lan -$km2->lan;
-        $number2 = $km1->lang-$km2->lang;*/
-
-        $data = $request->only('product_id','from','to','time','rezervation_no','airline','rezervation_date','rezervation_time','pickup_time');
+        $data = $request->only('product_id','from','to','time','rezervation_no','airline','rezervation_date','pickup_time');
         $data['user_id'] = auth()->user()->id;
         $data['phone'] = auth()->user()->phone;
         $data['name'] = auth()->user()->name;
         $data['email'] = auth()->user()->email;
-
-        dd($data);
         $res = new Rezervation();
         $res->user_id = auth()->user()->id;
         $res->phone = auth()->user()->phone;
         $res->name  = auth()->user()->name;
         $res->email = auth()->user()->email;
         $res->from_location_id_id =$request->input('product_id');
-        $res->to_location_id_id =
-        $res->airline =
-        $res->rezervation_no =
-        $res->rezervation_date =
-        $res->rezervation_time =
-        $res->pickup_time =
         $res = Location::create($data);
         return redirect()->route('user_rezervations')->with('success','Location added');
     }
@@ -113,11 +100,11 @@ class LocationController extends Controller
         //
     }
 
-
-    public function takeVehcile($id)
-    {
-        $vichle = Product::query()->findOrFail($id);
-        $setting = Setting::first();
-        return view('home.selected_vichele', compact('vichle','setting'));
-    }
+//
+//    public function takeVehcile($id)
+//    {
+//        $vichle = Product::query()->findOrFail($id);
+//        $setting = Setting::first();
+//        return view('home.selected_vichele', compact('vichle','setting'));
+//    }
 }
