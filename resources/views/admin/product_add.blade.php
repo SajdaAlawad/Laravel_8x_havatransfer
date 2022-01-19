@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Add Product ')
+@section('title', 'Add Vehicle ')
  @section('javascript')
      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
@@ -60,19 +60,6 @@
                                 <div class="form-group">
                                     <label >Type Of Vehicle</label>
                                     <input type="text" name="Ticket_type" class="form-control" >
-                                </div>
-
-                                <div class="form-group">
-                                    <label>From Where </label>
-                                    <input type="text" name="from" class="form-control" >
-                                </div>
-                                <div class="form-group">
-                                    <label >To Where</label>
-                                    <input type="text" name="to" class="form-control" >
-                                </div>
-                                <div class="form-group">
-                                    <label >Base Price</label>
-                                    <input type="number" name="price_ticket" value="0" class="form-control" >
                                 </div>
 
                                 <div class="form-group">

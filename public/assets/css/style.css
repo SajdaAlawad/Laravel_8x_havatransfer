@@ -325,7 +325,7 @@ header h1 a img {
 .content {
     background-color: #fff;
     padding-bottom: 120px;
-    padding-top: 95px;
+    padding-top: 29px;
 }
 .content1 {
     background-color: #fff;
@@ -335,6 +335,7 @@ header h1 a img {
 
 .page1  .content {
     padding-bottom: 115px;
+    padding-top: 120px;
 }
 
 .banner {
@@ -369,13 +370,15 @@ header h1 a img {
 .banner a {
     font-size: 14px;
     line-height: 20px;
-    color: #c73430;
+    color: #000000;
     text-transform: uppercase;
     display: inline-block;
     background-color: #e5e5e5;
     padding: 5px 18px 4px;
     margin-top: 25px;
     border-radius: 13px;
+    width: 150px;
+    background: #c73430;
 }
 
 .banner a:hover {
@@ -488,9 +491,10 @@ a.link1 {
     text-transform: uppercase;
     display: inline-block;
     background-color: #e5e5e5;
-    padding: 5px 18px 4px;
+    padding: 5px 54px 5px;
     margin-top: 28px;
     border-radius: 13px;
+    width: 200px;
 }
 
 a.link1:hover {

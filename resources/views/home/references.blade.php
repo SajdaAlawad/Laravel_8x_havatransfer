@@ -8,7 +8,7 @@
     <div id="breadcrumb">
         <div class="container">
             <ul class="breadcrumb">
-                <li><a href="{{route('home')}}">Home</a> / <a href="#">References</a></li>
+                <li><a href="{{route('home')}}">Home</a> / <a href="{{route('references')}}">References</a></li>
 
             </ul>
         </div>
@@ -16,7 +16,7 @@
     <div class="content1">
         <div class="container_12">
             <div class="grid_12">
-                <div class=" ">
+                <div class="grid_4">
                     {!! $setting->references !!}
                 </div>
             </div>

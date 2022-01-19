@@ -6,7 +6,7 @@
 <div class="breadcrumb">
     <div class="container">
         <ul class="breadcrumb">
-            <li><a href="{{route('home')}}">Home </a></li>/
+            <li><a href="{{route('home')}}">Home </a></li>
             <li><a href="{{route('user_rezervations')}}">Reservation </a></li>
         </ul>
     </div>
@@ -30,40 +30,40 @@
                     </div>
                 </div>
                 <div class="fl1">
-                    <div class="email">
-                        <input name="email" placeHolder="Email:" type="text" value="{{Auth::user()->email}}" data-constraints="@NotEmpty @Required">
-                    </div>
+                <div class="email">
+                    <input name="email" placeHolder="Email:" type="text" value="{{Auth::user()->email}}" data-constraints="@NotEmpty @Required">
                 </div>
-                 <div class="fl2">
-                    <div class="rezervation_no">
-                        <input type="number" name="rezervation_no" placeholder="Rezervation Number:" data-constraints="@NotEmpty @Required "/>
-                    </div>
                 </div>
                 <div class="fl2">
                     <div class="airline">
                         <input type="text" name="airline" placeholder="Airline:" data-constraints="@NotEmpty @Required "/>
                     </div>
                 </div>
+                <div class="fl3">
+                    <div class="rezervation_no">
+                        <input type="number" name="rezervation_no" placeholder="Rezervation Number:" data-constraints="@NotEmpty @Required "/>
+                    </div>
+                </div>
 
                 <div class="clear">
+
                 </div>
-                <div class="fl2">
+                <div class="fl3">
                     <div class="from_location_id_id">
-                        <label for="from_location_id_id">
+                        <div for="from_location_id_id">
                             <select id="from" name="from_location_id_id" class="form-control form-control-sm">
                                 @foreach($fromlist as $ds1)
                                     <option value="{{$ds1->id}}"  data-long="{{$ds1->long_location}}" data-lat="{{$ds1->lat_location}}">{{$ds1->name}}</option>
                                 @endforeach
                             </select>
-                        </label>
-
+                        </div>
                     </div>
                     <a @if($fromlist->first()->type == 'airport')
-                             href="{{route('fromto')}}"
+                             href="{{route('fromto_c',['id'=>$car_id])}}"
                              @else
-                             href="{{route('user_rezervation_add')}}"
+                             href="{{route('user_rezervation_add_c',['id'=>$car_id])}}"
                              @endif
-                             class="link1"> Change Directions <i class="bi bi-arrow-left-right"></i></a>
+                            class="link1">  Change Directions <i class="bi bi-arrow-left-right"></i></a>
                     <div class="tmInput">
                         <div class="to_location_id_id">
                             <select id="to" name="to_location_id_id" class="form-control form-control-sm">
@@ -73,22 +73,20 @@
                             </select>
                         </div>
                     </div>
+                </a>
                 </div>
 
-                <div class="fl3">
-                    <div class="tmInput">
+
+                    <div class="fl3">
                         <label for="product_id">
                             <select  name="product_id" id="car" class="form-control form-control-sm">
                                 <option selected value="0"  data-price="0" disabled>Select Ride</option>
                                 @foreach($cars as $car)
-                                    <option value="{{$car->id}}" data-price="{{$car->price_km}}">{{$car->title}}</option>
+                                    <option @if($car->id==$car_id) selected @endif value="{{$car->id}}" data-price="{{$car->price_km}}">{{$car->title}}</option>
                                 @endforeach
                             </select>
                         </label>
                     </div>
-                </div>
-
-
 
                 <div class="clear"></div>
                 <strong>Reservation Date</strong>
@@ -98,10 +96,11 @@
 
                 <div class="clear"></div>
                 <strong>Rezervation Time</strong>
-                <label class="rezervation_time">
-                    <input type="time" name="rezervation_time" min="01:00" max="23:00" step="900">
+                <label class="rezervation_time" >
+                    <input type="time" name="rezervation_time" min="01:00" max="23:00" step="900"  >
                 </label>
-                <div class="clear"></div>
+
+                <div class="clear"> </div>
                 <strong>Pickup Time</strong>
                 <label class="pickup_time">
                     <input type="time" name="pickup_time" min="01:00" max="23:00" step="900">

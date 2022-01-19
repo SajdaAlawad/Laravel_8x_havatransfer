@@ -46,13 +46,25 @@ class LocationController extends Controller
         $number1 = $km1->lan -$km2->lan;
         $number2 = $km1->lang-$km2->lang;*/
 
-        $data = $request->only('product_id','from_location','to_location','lat_location','long_location','time','total_price', 'status','long1_location','lat1_location');
+        $data = $request->only('product_id','from','to','time','rezervation_no','airline','rezervation_date','rezervation_time','pickup_time');
         $data['user_id'] = auth()->user()->id;
-        $km = Product::find($data['product_id']);
-        $number1 = $data['long_location'] - $data['long1_location'];
-        $number2= $data['lat_location'] - $data['lat1_location'];
-        $data['total_price'] =$km->price_km* sqrt(($number1)*($number1) + ($number2)*($number2));
+        $data['phone'] = auth()->user()->phone;
+        $data['name'] = auth()->user()->name;
+        $data['email'] = auth()->user()->email;
+
         dd($data);
+        $res = new Rezervation();
+        $res->user_id = auth()->user()->id;
+        $res->phone = auth()->user()->phone;
+        $res->name  = auth()->user()->name;
+        $res->email = auth()->user()->email;
+        $res->from_location_id_id =$request->input('product_id');
+        $res->to_location_id_id =
+        $res->airline =
+        $res->rezervation_no =
+        $res->rezervation_date =
+        $res->rezervation_time =
+        $res->pickup_time =
         $res = Location::create($data);
         return redirect()->route('user_rezervations')->with('success','Location added');
     }

@@ -51,9 +51,6 @@ class ProductController extends Controller
         $data->category_id = $request->input('category_id');
         $data->user_id = Auth::id();
         $data->Ticket_type = $request->input('Ticket_type');
-        $data->from = $request->input('from');
-        $data->to = $request->input('to');
-        $data->price_ticket = $request->input('price_ticket');
         $data->price_km = $request->input('price_km');
         $data->aicraft_type_capacity = $request->input('aicraft_type_capacity');
         $data->detail = $request->input('detail');
@@ -107,9 +104,6 @@ class ProductController extends Controller
         $data->category_id = $request->input('category_id');
         $data->user_id = Auth::id();
         $data->Ticket_type = $request->input('Ticket_type');
-        $data->from = $request->input('from');
-        $data->to = $request->input('to');
-        $data->price_ticket = $request->input('price_ticket');
         $data->price_km = $request->input('price_km');
         $data->aicraft_type_capacity = $request->input('aicraft_type_capacity');
         $data->detail = $request->input('detail');

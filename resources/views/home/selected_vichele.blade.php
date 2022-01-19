@@ -36,12 +36,16 @@
                         @endforeach
                     </select>
                     </label>
+                    <div class="fl1">
+                    <div class="product_id">
+                        <label for="v">Vehicle: </label>
+                        <input id="v" type="text" value="{{ $vichle->name }}" readonly>
+                        <input name="product_id" type="hidden" value="{{ $vichle->id }}" readonly>
+                    </div>
+                    </div>
                         <div class="fl1">
-                            <div class="product_id">
-                                <input name="product_id" placeHolder="Vehicle:" type="number" value="{{ $vichle->name }}" data-constraints='@NotEmpty @Required '>
-                            </div>
                             <div class="phone ">
-                                <input name="phone" placeHolder="Phone:" type="number" value="{{Auth::user()->phone}}" data-constraints="@NotEmpty @Required">
+                                <input name="phone" placeHolder="Phone:" type="number" value="{{Auth::user()->phone}}" readonly>
                             </div>
                         </div>
 
@@ -66,7 +70,7 @@
                     <div class="clear"></div>
                     <strong>Reservation Date</strong>
                     <label class="rezervation_date">
-                        <input type="datetime-local" name="Check-in" placeHolder='10/05/2022' data-constraints="@NotEmpty @Required @Date">
+                        <input type="datetime-local" class="Check-in" name="rezervation_date" placeHolder='10/05/2022' data-constraints="@NotEmpty @Required @Date">
                     </label>
 
                     <div class="clear"></div>

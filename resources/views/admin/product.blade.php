@@ -25,7 +25,7 @@
            <div class="card">
                <div class="card-header">
                   <!-- <a href="" type="button" class="btn btn-block btn-info" style="width: 200px">Add Category</a> -->
-                   <a href="{{route('admin_product_add')}}" type="button" class="btn btn-inverse-info btn-fw" style="width:200px">Add Taxi</a>
+                   <a href="{{route('admin_product_add')}}" type="button" class="btn btn-inverse-info btn-fw" style="width:200px">Add Vehicle</a>
                </div>
                <div class="col-lg-10 stretch-card">
                    <div class="card">
@@ -38,9 +38,6 @@
                                        <th>Category</th>
                                        <th>Title </th>
                                        <th>Type Of Vehicles </th>
-                                       <th>From Where </th>
-                                       <th>To Where</th>
-                                       <th>Base Price </th>
                                        <th>Km Price </th>
                                        <th>Capacity</th>
                                        <th>Image</th>
@@ -59,9 +56,6 @@
                                        </td>
                                        <td> {{ $rs->title }}</td>
                                        <td>{{ $rs->Ticket_type }} </td>
-                                       <td> {{ $rs->from }}</td>
-                                       <td> {{ $rs->to }}</td>
-                                       <td>{{$rs->price_ticket}}</td>
                                        <td>{{$rs->price_km}}</td>
                                        <td>{{$rs->aicraft_type_capacity}}</td>
                                        <td>

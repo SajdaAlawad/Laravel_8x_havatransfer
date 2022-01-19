@@ -18,6 +18,7 @@
                 @include('home.message')
                 <div class="col-12 grid-margin stretch-card">
                     <div class="card">
+
                             <form class="forms-sample" action="{{route('admin_rezervationlist_update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <table class="table table-bordered table-striped ">

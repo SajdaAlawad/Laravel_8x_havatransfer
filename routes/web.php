@@ -40,7 +40,7 @@ Route::get('/references', [HomeController::class, 'references'])->name('referenc
 Route::get('/faq', [HomeController::class, 'faq'])->name('faq');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/location', [HomeController::class, 'location'])->name('location');
-Route::get('/rezervation', [HomeController::class, 'rezervation'])->name('rezervation');
+//Route::get('/rezervation', [HomeController::class, 'rezervation'])->name('rezervation');
 
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
 Route::get('/getproduct', [HomeController::class, 'getproduct'])->name('getproduct');
@@ -151,7 +151,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
         Route::get('edit/{id}', [RezervationlistController::class, 'edit'])->name('admin_rezervationlist_edit');
         Route::post('update/{id}', [RezervationlistController::class, 'update'])->name('admin_rezervationlist_update');
         Route::get('delete/{id}', [RezervationlistController::class, 'destroy'])->name('admin_rezervationlist_delete');
-        Route::get('show', [RezervationlistController::class, 'show'])->name('admin_rezervationlist_show');
+        Route::get('show/{id}', [RezervationlistController::class, 'show'])->name('admin_rezervation_show');
      });
   #admin.users
         Route::prefix('user')->group(function () {
@@ -189,14 +189,18 @@ Route::middleware('auth')->prefix('user')->namespace('user')->group(function () 
         Route::get('delete/{id}', [LocationController::class, 'destroy'])->name('user_location_delete');
     });
     #rezervation
+
     Route::prefix('rezervation')->group(function () {
         Route::get('/', [RezervationController::class, 'index'])->name('user_rezervations');
+        Route::get('/c2a/', [RezervationController::class, 'fromto'])->name('fromto');
         Route::get('create', [RezervationController::class, 'create'])->name('user_rezervation_add');
+        Route::get('/c2a/{id}', [RezervationController::class, 'fromto_car'])->name('fromto_c');
+        Route::get('create/{id}', [RezervationController::class, 'create_car'])->name('user_rezervation_add_c');
         Route::post('/store', [RezervationController::class, 'store'])->name('user_rezervation_store');
         Route::get('edit/{id}', [RezervationController::class, 'edit'])->name('user_rezervation_edit');
         Route::post('update/{id}', [RezervationController::class, 'update'])->name('user_rezervation_update');
         Route::get('delete/{id}', [RezervationController::class, 'destroy'])->name('user_rezervation_delete');
-        Route::get('show', [RezervationController::class, 'show'])->name('user_rezervation_show');
+        Route::get('show', [RezervationController::class, 'show'])->name('user_rezervationlist_show');
 
     });
 
@@ -214,4 +218,3 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::get('select-vehcile/{id}/C2A', [RezervationController::class, 'C2A'])->name('C2A');
 Route::get('select-vehcile/{id}/A2C', [RezervationController::class, 'A2C'])->name('A2C');
-Route::get('/product/fromto/{id}/potaites/yes', [RezervationController::class, 'fromto'])->name('fromto');

@@ -19,6 +19,7 @@
 .fl1 {
   width: 193px;
   float: left;
+    padding-bottom: 15px;
 }
 
 .fl1.fl2 {
@@ -121,6 +122,7 @@ textarea::-moz-placeholder
 .controlHolder {
   position: relative;
   margin-bottom: 13px;
+    padding-top: 20px;
 }
 /* Messages */
 .error-message {

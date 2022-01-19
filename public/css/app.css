@@ -1489,6 +1489,7 @@ select {
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
+    padding-bottom: 3px;
 }
 .p-2 {
   padding: 0.5rem;

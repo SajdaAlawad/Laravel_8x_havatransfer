@@ -23,39 +23,20 @@ class RezervationController extends Controller
     public function index()
     {
         $setting = Setting::first();
-        $datalist = Rezervation::where('user_id',Auth::id());
+        $datalist = Rezervation::where('user_id',Auth::id())->get();
+        //dd($datalist);
         return view('home.user_rezervationlist',['setting'=>$setting,'datalist'=>$datalist]);
-        return view('home.user_rezervationlist', compact('setting'));
-    }
-    public function fromto($id)
-    {
-
-        $data = Product::find($id);
-        $datalist = Image::where('product_id',$id)->get();
-        $reviews = Review::where('product_id',$id)->get();
-        //print_r($data);
-        #exit();
-        return view('home.fromto',['data'=>$data,'datalist'=>$datalist,'reviews'=>$reviews]);
 
     }
-    public function A2C($id)
+    public function fromto()
     {
         $setting = Setting::first();
-        $datalist1 = Location::where('type','airport')->get();
-        $datalist2 = Location::where('type','city')->get();
+        $fromlist = Location::where('type','city')->get();
+        $tolist = Location::where('type','airport')->get();
+        $cars = Product::all();
+        return view('home.user_rezervation',['setting'=>$setting,'cars'=>$cars,'fromlist'=>$fromlist,'tolist'=>$tolist]);
+    }
 
-        $vichle = Product::find($id);
-        return view('home.selected_vichele',['setting'=>$setting,'vichle'=>$vichle,'datalist1'=>$datalist1,'datalist2'=>$datalist2]);
-        //return view('home.user_rezervationlist', compact('setting'));
-    }
-    public function C2A($id)
-    {
-        $setting = Setting::first();
-        $datalist2 = Location::where('type','airport')->get();
-        $datalist1 = Location::where('type','city')->get();
-        $vichle = Product::find($id);
-        return view('home.selected_vichele',['setting'=>$setting,'vichle'=>$vichle,'datalist1'=>$datalist1,'datalist2'=>$datalist2]);
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -64,8 +45,29 @@ class RezervationController extends Controller
      */
     public function create(Request $request)
     {
-         $total_price = $request->input('total_price_id');
-         return view('home.user_rezervation',['total_price_id'=>$total_price]);
+        $setting = Setting::first();
+        $fromlist = Location::where('type','airport')->get();
+        $tolist = Location::where('type','city')->get();
+        $cars = Product::all();
+
+        return view('home.user_rezervation',['setting'=>$setting,'cars'=>$cars,'fromlist'=>$fromlist,'tolist'=>$tolist]);
+    }
+    public function create_car($id)
+    {
+        $setting = Setting::first();
+        $fromlist = Location::where('type','airport')->get();
+        $tolist = Location::where('type','city')->get();
+        $cars = Product::all();
+
+        return view('home.user_rezervation_c',['setting'=>$setting,'cars'=>$cars,'fromlist'=>$fromlist,'tolist'=>$tolist,'car_id'=>$id]);
+    }
+    public function fromto_car($id)
+    {
+        $setting = Setting::first();
+        $fromlist = Location::where('type','city')->get();
+        $tolist = Location::where('type','airport')->get();
+        $cars = Product::all();
+        return view('home.user_rezervation_c',['setting'=>$setting,'cars'=>$cars,'fromlist'=>$fromlist,'tolist'=>$tolist,'car_id'=>$id]);
     }
 
     /**
@@ -77,20 +79,42 @@ class RezervationController extends Controller
     public function store(Request $request)
     {
         $data = new Rezervation();
+        $km = Product::find($request->input('product_id'));
+        $from=Location::find($request->input('from_location_id_id'));
+        $to=Location::find($request->input('to_location_id_id'));
+        $number1 = $to->long_location - $from->long_location;
+        $number2= $to->lat_location - $from->lat_location;
+        $data->total_price_id = $km->price_km* sqrt(($number1)*($number1) + ($number2)*($number2));
         $data->user_id = Auth::id();
+        $data->phone = Auth::user()->phone;
+        $data->name  = Auth::user()->name;
+        $data->email = Auth::user()->email;
         $data->product_id = $request->input('product_id');
         $data->from_location_id_id = $request->input('from_location_id_id');
         $data->to_location_id_id = $request->input('to_location_id_id');
-        $data->total_price_id = $request->input('total_price_id');
+      //  $data->total_price_id = $request->input('total_price_id');
         $data->airline = $request->input('airline');
         $data->rezervation_no = $request->input('rezervation_no');
         $data->rezervation_date = $request->input('rezervation_date');
         $data->rezervation_time = $request->input('rezervation_time');
         $data->pickup_time= $request->input('pickup_time');
         $data->note = $request->input('note');
-        $data->IP = $_SERVER('REMOTE_ADDR');
+        $data->IP = $this->getIp();
         $data->save();
-        return redirect()->route('user_rezervation')->with('success','Vehicle Reserved Successfully');
+        return redirect()->route('user_rezervations')->with('success','Vehicle Reserved Successfully');
+    }
+    public function getIp(){
+        foreach (array('HTTP_CLIENT_IP', 'HTTP_X_FORWARDED_FOR', 'HTTP_X_FORWARDED', 'HTTP_X_CLUSTER_CLIENT_IP', 'HTTP_FORWARDED_FOR', 'HTTP_FORWARDED', 'REMOTE_ADDR') as $key){
+            if (array_key_exists($key, $_SERVER) === true){
+                foreach (explode(',', $_SERVER[$key]) as $ip){
+                    $ip = trim($ip); // just to be safe
+                    if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) !== false){
+                        return $ip;
+                    }
+                }
+            }
+        }
+        return request()->ip(); // it will return server ip when no client ip found
     }
 
     /**
@@ -101,8 +125,8 @@ class RezervationController extends Controller
      */
     public function show(Rezervation $rezervation)
     {
-//        $setting = Setting::first();
-//        return view('home.user_rezervationlist', compact('setting'));
+        $setting = Setting::first();
+        return view('home.user_rezervationlist', compact('setting'));
     }
 
     /**

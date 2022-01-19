@@ -1,5 +1,7 @@
 <!--==============================header=================================-->
-<header>
+<header style="
+    height: 120px;
+">
     <div class="container_12">
         <div class="grid_12">
             <div class="menu_block">

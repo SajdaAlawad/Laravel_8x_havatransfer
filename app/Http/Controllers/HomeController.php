@@ -38,9 +38,9 @@ class HomeController extends Controller
     public function index()
     {
         $setting = Setting::first();
-        $slider = Product::select('id','title','image','price_ticket','slug')->limit(4)->get();
-        $daily = Product::select('id','title','image','price_ticket','slug')->limit(3)->inRandomOrder()->get();
-        $last = Product::select('id','title','image','price_ticket','slug')->limit(3)->orderByDesc('id')->get();
+        $slider = Product::select('id','title','image','price_km','slug')->limit(4)->get();
+        $daily = Product::select('id','title','image','price_km','slug')->limit(3)->inRandomOrder()->get();
+        $last = Product::select('id','title','image','price_km','slug')->limit(3)->orderByDesc('id')->get();
 //        print_r($slider);
 //        exit();
         $data=[

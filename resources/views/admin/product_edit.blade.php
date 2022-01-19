@@ -69,19 +69,6 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label >From Where</label>
-                                    <input type="text" name="from" value="{{$data->from}}" class="form-control" >
-                                </div>
-                                <div class="form-group">
-                                    <label >To Where</label>
-                                    <input type="text" name="to" value="{{$data->to}}" class="form-control" >
-                                </div>
-                                <div class="form-group">
-                                    <label >Base Price </label>
-                                    <input type="number" name="price_ticket" value="{{$data->price_ticket}}" class="form-control" >
-                                </div>
-
-                                <div class="form-group">
                                     <label >KM Price </label>
                                     <input type="number" name="price_km" value="{{$data->price_km}}" class="form-control" >
                                 </div>

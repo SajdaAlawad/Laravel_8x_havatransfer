@@ -1,20 +1,20 @@
 
 @extends('layouts.home')
-@section('title', 'My Rezervation')
+@section('title', 'My Reservation')
 @section('content')
 
     <div class="content1">
         <div class="container_12">
             <div class="container">
                         <ul class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">home</a>  </li>
-                            <li class="breadcrumb-item"><a href="#">User Rezervation</a>  </li>
+                            <li class="breadcrumb-item"><a href="{{route('home')}}">home</a></li>
+                            <li class="breadcrumb-item"><a href="{{route('user_rezervations')}}">User Reservation</a>  </li>
                         </ul>
              </div>
-                <div class="grid_2">
+                <div class="grid_3">
                     @include('home.usermenu')
                 </div>
-                <div class="grid_10">
+                <div class="grid_9">
                     <div class="table-responsive ">
                         <div class="card">
                                     <table class="table table-bordered table-striped ">
@@ -28,12 +28,11 @@
                                             <th>Airline</th>
                                             <th>From Where</th>
                                             <th>To Where </th>
-                                            <th>Rezervation No</th>
-                                            <th>Rezervation Date</th>
-                                            <th>Rezervation Time</th>
+                                            <th>Reservation No</th>
+                                            <th>Reservation Date</th>
+                                            <th>Reservation Time</th>
                                             <th>Total</th>
                                             <th>Status</th>
-                                            <th style="..." colspan="2">Actions</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -53,7 +52,6 @@
                                                 <td>{{$rs->rezervation_time}}</td>
                                                 <td>{{$rs->total_price_id}}</td>
                                                 <td> {{ $rs->status }}</td>
-                                                <td><a href="{{route('user_rezervationlist_show',['id' =>$rs->id])}}"><img src="{{asset('assets/admin/image')}}/edit.jfif" height="25"></a></td>
                                             </tr>
                                         @endforeach
                                         </tbody>

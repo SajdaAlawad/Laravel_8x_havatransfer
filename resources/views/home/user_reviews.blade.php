@@ -14,13 +14,13 @@
         <div class="container_12">
             <div class="container">
                 <ul>
-                    <li><a href="{{route('home')}}">Home</a> / <a href="#">My Reviews</a></li>
+                    <li><a href="{{route('home')}}">Home</a> / <a href="{{route('myreviews')}}">My Reviews</a></li>
                 </ul>
             </div>
-            <div class="grid_2">
+            <div class="grid_3">
                 @include('home.usermenu')
             </div>
-            <div class="grid_10">
+            <div class="grid_9">
                 <div class="table-responsive ">
                     <div class="card">
                         <table id="example">

@@ -16,27 +16,22 @@
 
 <div class="section">
     <div class="container">
-        <div class="row">
-         @foreach($datalist as $rs)
             <div class="content">
-                <div class="ic">More Website Templates @ TemplateMonster.com - February 10, 2014!</div>
                 <div class="container_12">
-                    <div class="banners">
-                        <div class="grid_4">
+                    @foreach($datalist as $rs)
+                    <div class="grid_3">
                             <div class="banner">
-                                <img src="{{Storage::url($rs->image)}}" alt="">
+                                <img src="{{Storage::url($rs->image)}}" style="height:300px; width: 250px" alt="">
                                 <div class="label">
-                                    <div class="title">NEW ZEALAND</div>
+                                    <div class="title">{{$rs->title}}</div>
                                     <div class="price">from<span>{{$rs->price_ticket}}</span></div>
                                     <a href="{{route('product',['id' => $rs->id,'slug' => $rs->slug])}}">LEARN MORE</a>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                      </div>
+                    @endforeach
                 </div>
             </div>
-            @endforeach
-        </div>
     </div>
 </div>
 @endsection

@@ -9,7 +9,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h3>Rezervationlist</h3>
+                        <h3>Rezervation</h3>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -73,9 +73,11 @@
                                             <td>{{$rs->total_price_id}}</td>
                                             <td> {{ $rs->status }}</td>
                                             <td>
-                                            <a href="{{route('admin_rezervation_show',['id' =>$rs->id])}}">
+                                            <a href="{{route('admin_rezervationlist_edit',['id' =>$rs->id])}}" onclick="return !window.open(this.href,'','top=50 left=100 width=800,height=600')">
                                                 <img src="{{asset('assets/admin/image')}}/edit.jfif" height="25"></a>
                                             </td>
+
+
                                         </tr>
                                     @endforeach
                                     </tbody>
